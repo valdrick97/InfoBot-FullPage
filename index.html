@@ -99,12 +99,12 @@
   const botFrame = document.getElementById('faq-bot-frame');
   const botTrigger = document.getElementById('faq-bot-trigger');
   
-  // Replace this URL with your GitHub Pages URL for the bot
-  const botUrl = 'https://yourusername.github.io/faq-bot/';
+  // Bot URL
+  const botUrl = 'https://valdrick97.github.io/FAQ-bot/';
 
   botTrigger.addEventListener('click', () => {
     if (botFrame.style.display === 'none' || botFrame.style.display === '') {
-      botFrame.src = botUrl; // Set the bot URL when opening
+      botFrame.src = 'https://valdrick97.github.io/FAQ-bot/'; // Set the bot URL when opening
       botFrame.style.display = 'block';
     } else {
       botFrame.style.display = 'none';
