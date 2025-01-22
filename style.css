@@ -33,35 +33,5 @@ nav ul li a:hover {
       padding: 0;
       background-color: #f0f0f0;
  } 
-#faq-bot-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-}
 
-#faq-bot-trigger {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-#faq-bot-trigger:hover {
-  background-color: #0056b3;
-}
-
-#faq-bot-frame {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 400px;
-  height: 600px;
-  border: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  display: none;
-}
 
