@@ -85,29 +85,13 @@
   <footer>
     <p>&copy; 2025 My New Site | All Rights Reserved</p>
   </footer>
-  
-<!-- FAQ Bot Embed -->
+
+  <!-- FAQ Bot Embed -->
 <iframe id="faq-bot-frame" 
-        src="https://valdrick97.github.io/FAQ-bot/"
+        src="https://valdrick97.github.io/FAQ-bot/" 
         style="position: fixed; bottom: 20px; right: 20px; width: 400px; height: 600px; border: none; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); z-index: 1000;">
 </iframe>
 
-  <script>
-  const botFrame = document.getElementById('faq-bot-frame');
-  const botTrigger = document.getElementById('faq-bot-trigger');
-  
-  // Bot URL
-  const botUrl = 'https://valdrick97.github.io/FAQ-bot/';
-
-  botTrigger.addEventListener('click', () => {
-    if (botFrame.style.display === 'none' || botFrame.style.display === '') {
-      botFrame.src = 'https://valdrick97.github.io/FAQ-bot/'; // Set the bot URL when opening
-      botFrame.style.display = 'block';
-    } else {
-      botFrame.style.display = 'none';
-    }
-  });
-</script>
 
 </body>
 </html>
