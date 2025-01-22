@@ -27,3 +27,9 @@ nav ul li a {
 nav ul li a:hover {
   color: #ff6600; /* Change color on hover */
 }
+ body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+ } 
