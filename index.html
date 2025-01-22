@@ -87,14 +87,11 @@
   </footer>
   
 <!-- FAQ Bot Embed -->
-<div id="faq-bot-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
-  <button id="faq-bot-trigger" style="background-color: #007bff; color: white; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-    Chat
-  </button>
-  <iframe id="faq-bot-frame" src=""
-          style="position: fixed; bottom: 80px; right: 20px; width: 400px; height: 600px; border: none; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); z-index: 1000; display: none;">
-  </iframe>
-</div>
+<iframe id="faq-bot-frame" 
+        src="https://valdrick97.github.io/FAQ-bot/"
+        style="position: fixed; bottom: 20px; right: 20px; width: 400px; height: 600px; border: none; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); z-index: 1000;">
+</iframe>
+
   <script>
   const botFrame = document.getElementById('faq-bot-frame');
   const botTrigger = document.getElementById('faq-bot-trigger');
