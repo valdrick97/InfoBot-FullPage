@@ -1,0 +1,29 @@
+/* Style the header and navigation bar */
+header {
+  background-color: #333; /* Dark background */
+  padding: 10px 20px; /* Space around the header */
+  text-align: center; /* Center the text */
+}
+
+nav ul {
+  list-style-type: none; /* Remove bullets */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Use flexbox for horizontal layout */
+  justify-content: center; /* Center the items horizontally */
+}
+
+nav ul li {
+  margin: 0 20px; /* Space between the links */
+}
+
+nav ul li a {
+  color: white; /* White text color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  color: #ff6600; /* Change color on hover */
+}
