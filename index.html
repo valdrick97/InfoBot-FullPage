@@ -201,6 +201,11 @@
       chatBox.appendChild(message);
       chatBox.scrollTop = chatBox.scrollHeight;
     }
+    document.getElementById('userInput').addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    sendMessage();
+  }
+});
 
     // Handle user input and bot response
     function sendMessage() {
