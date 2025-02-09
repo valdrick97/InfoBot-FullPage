@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   background-color: #f5f5f5; /* Light grey background */
   font-family: Arial, sans-serif;
@@ -27,7 +28,7 @@ body {
   height: 120px;
 }
 
-/* Open state: expands to a big box */
+/* Open state: expands to a larger box */
 .chat-container.open {
   height: 500px;
 }
@@ -43,6 +44,20 @@ body {
   border-radius: 50%;
   background: url('https://via.placeholder.com/80') no-repeat center center;
   background-size: cover;
+  transition: all 0.5s ease;
+}
+
+/* While closed, add a circle border around the image */
+.chat-container.closed .chat-image {
+  border: 3px solid #007bff;
+}
+
+/* When open, move the image to the right side and remove the border */
+.chat-container.open .chat-image {
+  left: auto;
+  right: 10px;
+  transform: translateX(0);
+  border: none;
 }
 
 /* ---------- Chat Header ---------- */
@@ -58,7 +73,7 @@ body {
 /* In the closed state, position the header just above the input */
 .chat-container.closed .chat-header {
   position: absolute;
-  bottom: 50px;  /* Adjust this value to set distance above the input */
+  bottom: 50px;
   left: 0;
   right: 0;
 }
@@ -109,13 +124,26 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  display: flex;
+  align-items: center;
   padding: 10px 15px;
   background-color: #f9f9f9;
   border-top: 1px solid #ddd;
 }
+
 .chat-input input {
-  width: 100%;
+  flex: 1;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  margin-right: 5px;
+}
+
+.chat-input button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
 }
