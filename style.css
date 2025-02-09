@@ -45,10 +45,11 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: url('https://via.placeholder.com/80') no-repeat center center;
+  background: url('https://placekitten.com/80/80') no-repeat center center;
   background-size: cover;
   transition: all 0.5s ease;
 }
+
 
 /* While closed, add a circular border around the image */
 .chat-container.closed .chat-image {
