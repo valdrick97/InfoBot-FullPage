@@ -1,7 +1,10 @@
-/* ---------- Global Styles ---------- */
-body {
+/* ---------- Global Reset ---------- */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+body {
   background-color: #f5f5f5; /* Light grey background */
   font-family: Arial, sans-serif;
 }
@@ -14,26 +17,25 @@ body {
   border-radius: 8px;
   background-color: #fff;
   position: relative;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: all 0.5s ease;
+  transition: height 0.5s ease;
 }
 
-/* ---------- Chat Header ---------- */
-.chat-header {
-  background-color: #007bff;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
-  font-size: 18px;
-  position: relative;
-  transition: transform 0.5s ease;
+/* Closed state: small height (only header and input visible) */
+.chat-container.closed {
+  height: 120px;
+}
+
+/* Open state: expands to a big box */
+.chat-container.open {
+  height: 500px;
 }
 
 /* ---------- Chat Image (Avatar) ---------- */
 .chat-image {
   position: absolute;
-  top: -40px;  /* Initial position when closed */
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
   width: 80px;
@@ -41,15 +43,51 @@ body {
   border-radius: 50%;
   background: url('https://via.placeholder.com/80') no-repeat center center;
   background-size: cover;
-  transition: top 0.5s ease;
 }
 
-/* ---------- Chat Messages Area ---------- */
+/* ---------- Chat Header ---------- */
+.chat-header {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+
+/* In the closed state, position the header just above the input */
+.chat-container.closed .chat-header {
+  position: absolute;
+  bottom: 50px;  /* Adjust this value to set distance above the input */
+  left: 0;
+  right: 0;
+}
+
+/* In the open state, let the header be in normal document flow at the top */
+.chat-container.open .chat-header {
+  position: relative;
+  top: 0;
+  width: 100%;
+}
+
+/* ---------- Chat Messages ---------- */
 .chat-messages {
   padding: 15px;
-  max-height: 0;  /* Hidden initially */
-  overflow-y: hidden;
-  transition: max-height 0.5s ease;
+  overflow-y: auto;
+  transition: opacity 0.5s ease;
+}
+
+/* Hide messages in closed state */
+.chat-container.closed .chat-messages {
+  opacity: 0;
+  height: 0;
+  padding: 0 15px;
+}
+
+/* Show messages in open state */
+.chat-container.open .chat-messages {
+  opacity: 1;
+  height: auto;
 }
 
 /* ---------- Typing Indicator ---------- */
@@ -60,44 +98,24 @@ body {
   color: #888;
   transition: opacity 0.5s ease;
 }
+.chat-container.typing .typing-indicator {
+  display: block;
+  opacity: 1;
+}
 
 /* ---------- Chat Input ---------- */
 .chat-input {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 10px 15px;
-  border-top: 1px solid #ddd;
   background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
 }
 .chat-input input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-}
-
-/* ---------- Closed State Styles ---------- */
-.chat-container.closed .chat-header {
-  transform: translateY(100px);
-}
-.chat-container.closed .chat-messages {
-  max-height: 0;
-}
-.chat-container.closed .chat-image {
-  top: -40px;
-}
-
-/* ---------- Open State Styles ---------- */
-.chat-container.open .chat-header {
-  transform: translateY(0);
-}
-.chat-container.open .chat-messages {
-  max-height: 300px;  /* Expand messages area */
-}
-.chat-container.open .chat-image {
-  top: 0;
-}
-
-/* ---------- Typing Indicator Active ---------- */
-.chat-container.typing .typing-indicator {
-  display: block;
-  opacity: 1;
 }
