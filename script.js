@@ -1,50 +1,47 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const chatContainer = document.getElementById('chatContainer');
-  const chatInput = document.getElementById('chatInput');
-  const sendButton = document.getElementById('sendButton');
-  const chatMessages = document.getElementById('chatMessages');
+// Get elements
+const chatContainer = document.querySelector('.chat-container');
+const chatImage = document.querySelector('.chat-image');
+const chatHeader = document.querySelector('.chat-header');
+const chatMessages = document.querySelector('.chat-messages');
+const chatInput = document.querySelector('.chat-input');
+const chatMessageText = document.querySelector('.chat-message-text');
 
-  // Toggle the chat open/closed when clicking on the container.
-  // (But ignore clicks on the input field or button so you can type.)
-  chatContainer.addEventListener('click', function (e) {
-    // If the click is on an input or button, do nothing.
-    if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON') return;
-    
-    if (chatContainer.classList.contains('closed')) {
-      // Open the chat widget.
-      chatContainer.classList.remove('closed');
-      chatContainer.classList.add('open');
-    } else {
-      // Close the chat widget.
-      chatContainer.classList.remove('open');
-      chatContainer.classList.add('closed');
-    }
-  });
-
-  // Submit message on Enter key press.
-  chatInput.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      submitMessage();
-    }
-  });
-
-  // Submit message on button click.
-  sendButton.addEventListener('click', function (e) {
-    e.stopPropagation(); // Prevent toggle when clicking the button.
-    submitMessage();
-  });
-
-  // Function to submit the message and display it in the messages area.
-  function submitMessage() {
-    const message = chatInput.value.trim();
-    if (message !== '') {
-      const messageElem = document.createElement('p');
-      messageElem.textContent = message;
-      chatMessages.appendChild(messageElem);
-      chatInput.value = '';
-      // Scroll to the bottom if needed.
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
+// Toggle chat container
+chatContainer.addEventListener('click', () => {
+  if (chatContainer.classList.contains('closed')) {
+    chatContainer.classList.remove('closed');
+    chatContainer.classList.add('open');
+    chatImage.style.animation = 'rollBubble 0.5s ease forwards'; // Apply roll animation
+  } else {
+    chatContainer.classList.remove('open');
+    chatContainer.classList.add('closed');
+    chatImage.style.animation = ''; // Reset animation when closed
   }
 });
+
+// Submit message using Enter key
+chatInput.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    submitMessage();
+  }
+});
+
+// Submit message using the submit button
+document.querySelector('.chat-input button').addEventListener('click', submitMessage);
+
+function submitMessage() {
+  const message = chatInput.querySelector('input').value;
+  if (message.trim()) {
+    // Add the message to the chat
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message');
+    messageElement.textContent = message;
+    chatMessages.appendChild(messageElement);
+
+    // Scroll to the bottom of the chat
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    // Clear the input field
+    chatInput.querySelector('input').value = '';
+  }
+}
