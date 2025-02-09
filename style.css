@@ -19,18 +19,21 @@ body {
   background-color: #fff;
   position: relative;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* Default open state overflow (for messages area) */
   overflow: hidden;
   transition: height 0.5s ease;
 }
 
-/* Closed state: small height (only header and input visible) */
+/* When closed, allow overflow so the chat image’s circle is fully visible */
 .chat-container.closed {
   height: 120px;
+  overflow: visible;
 }
 
 /* Open state: expands to a larger box */
 .chat-container.open {
   height: 500px;
+  overflow: hidden;
 }
 
 /* ---------- Chat Image (Avatar) ---------- */
@@ -47,7 +50,7 @@ body {
   transition: all 0.5s ease;
 }
 
-/* While closed, add a circle border around the image */
+/* While closed, add a circular border around the image */
 .chat-container.closed .chat-image {
   border: 3px solid #007bff;
 }
