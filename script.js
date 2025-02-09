@@ -11,11 +11,11 @@ chatContainer.addEventListener('click', () => {
   if (chatContainer.classList.contains('closed')) {
     chatContainer.classList.remove('closed');
     chatContainer.classList.add('open');
-    chatImage.style.animation = 'rollBubble 0.5s ease forwards'; // Apply roll animation
+    chatImage.style.animation = 'none'; // Stop rolling animation when opening
   } else {
     chatContainer.classList.remove('open');
     chatContainer.classList.add('closed');
-    chatImage.style.animation = ''; // Reset animation when closed
+    chatImage.style.animation = 'rollBubble 0.5s ease forwards'; // Apply roll animation when closing
   }
 });
 
