@@ -2,30 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chatbot</title>
+  <title>Chat Widget</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Chatbot Container -->
-  <div id="chatContainer" class="chat-container">
-    <!-- Chat Header -->
-    <div class="chat-header">
-      <img src="chatbot-icon.png" alt="Bot" class="bot-avatar">
-      <h2>Chat Assistant</h2>
+  <!-- Chat widget container -->
+  <div class="chat-container closed" id="chatContainer">
+    <!-- Chat image shown above the container -->
+    <div class="chat-image" id="chatImage"></div>
+    <!-- Chat header (label) -->
+    <div class="chat-header" id="chatHeader">Chat Assistant</div>
+    <!-- Chat messages area (initially hidden) -->
+    <div class="chat-messages" id="chatMessages">
+      <!-- Example message -->
+      <p>Hello! How can I help you today?</p>
     </div>
-
-    <!-- Chat Messages -->
-    <div id="chatBox" class="chat-box"></div>
-
-    <!-- Input Area -->
-    <div class="input-container">
-      <input id="userInput" type="text" placeholder="Type your message...">
-      <button id="sendButton">Send</button>
+    <!-- Typing indicator (hidden until the user types) -->
+    <div class="typing-indicator" id="typingIndicator">Typing...</div>
+    <!-- Chat input area -->
+    <div class="chat-input">
+      <input type="text" id="chatInput" placeholder="Type a message...">
     </div>
   </div>
-
-  <script src="chatbot.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
