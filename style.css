@@ -31,6 +31,7 @@ body {
   transform: translate(-50%, -50%);
   transition: all 0.5s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
 }
 
 /* In closed state, hide the header, messages, and input */
@@ -147,12 +148,7 @@ body {
   font-size: 14px;
   text-align: center;
   font-weight: bold;
-  display: none; /* Initially hidden */
-}
-
-/* Show the "Click me" message when the container is closed */
-.chat-container.closed:hover .chat-message-text {
-  display: block; /* Show when hovered */
+  display: block; /* Always visible */
 }
 
 /* ---------- Rolling Animation for Circle ---------- */
@@ -165,8 +161,8 @@ body {
   }
 }
 
-/* ---------- Hover effect for the circle when closed */
-.chat-container.closed:hover {
-  animation: rollBubble 0.5s ease forwards; /* Apply roll animation */
+/* ---------- Rolling effect for chat bubble when opened/closed */
+.chat-container.open .chat-image {
+  animation: rollBubble 0.5s ease forwards; /* Apply roll animation when opening */
 }
 
