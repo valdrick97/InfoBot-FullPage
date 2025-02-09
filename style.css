@@ -1,122 +1,104 @@
-/* Style the header and navigation bar */
-header {
-  background-color: #ADD8E6; /* Light blue background */
-  padding: 20px; /* Space around the header */
-  text-align: center; /* Center the text */
-}
-
-nav ul {
-  list-style-type: none; /* Remove bullets */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  display: flex; /* Use flexbox for horizontal layout */
-  justify-content: center; /* Center the items horizontally */
-}
-
-nav ul li {
-  margin: 0 20px; /* Space between the links */
-}
-
-nav ul li a {
-  color: white; /* White text color */
-  text-decoration: none; /* Remove underline */
-  font-weight: bold;
-  font-size: 18px;
-}
-
-nav ul li a:hover {
-  color: #ff6600; /* Change color on hover */
-}
-
-/* Body styling */
-body {
-  font-family: Arial, sans-serif;
+/* Full-page setup */
+body, html {
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0; /* Light gray background */
+  width: 100%;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #007bff, #0056b3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Chatbot frame styling */
-#faq-bot-frame {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 400px;
-  height: 600px;
-  border: none; /* Remove border */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
-  z-index: 1000; /* Ensure it stays on top */
-}
-
-/* Chat container and button styles */
-#chatbotButton {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #FF2C2C;
-  color: white;
-  border: none;
-  padding: 15px;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 1000;
-}
-
+/* Chat Container */
 .chat-container {
-  position: fixed;
-  bottom: 70px;
-  right: 20px;
-  width: 400px;
-  max-width: 90%;
+  width: 90%;
+  max-width: 500px;
+  height: 80vh;
   background: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  display: none; /* Initially hidden */
-  z-index: 1000;
 }
 
+/* Chat Header */
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: #007bff;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.bot-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Chat Box */
 .chat-box {
-  height: 400px;
+  flex: 1;
+  padding: 15px;
   overflow-y: auto;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.message {
-  margin: 10px 0;
+/* Chat Bubbles */
+.user-message, .bot-message {
+  max-width: 80%;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .user-message {
-  text-align: right;
+  align-self: flex-end;
+  background: #007bff;
+  color: white;
 }
 
 .bot-message {
-  text-align: left;
-  color: #555;
+  align-self: flex-start;
+  background: #f1f1f1;
 }
 
+/* Input Container */
 .input-container {
   display: flex;
+  padding: 10px;
+  background: #fff;
   border-top: 1px solid #ddd;
 }
 
-input {
+.input-container input {
   flex: 1;
+  padding: 12px;
+  font-size: 16px;
   border: none;
-  padding: 10px;
+  border-radius: 5px;
   outline: none;
 }
 
-button {
+.input-container button {
+  padding: 12px 20px;
   background: #007bff;
-  border: none;
   color: white;
-  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+  margin-left: 10px;
 }
 
-button:hover {
+.input-container button:hover {
   background: #0056b3;
 }
