@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chat Widget Test</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Chat widget container -->
   <div class="chat-container closed" id="chatContainer">
     <!-- Chat image (avatar) -->
     <div class="chat-image" id="chatImage"></div>
-    <!-- Chat header -->
+    <!-- Chat header (banner) -->
     <div class="chat-header" id="chatHeader">Chat Assistant</div>
     <!-- Chat messages area -->
     <div class="chat-messages" id="chatMessages">
@@ -19,9 +19,10 @@
     </div>
     <!-- Typing indicator -->
     <div class="typing-indicator" id="typingIndicator">Typing...</div>
-    <!-- Chat input area -->
-    <div class="chat-input">
-      <input type="text" id="chatInput" placeholder="Type a message...">
+    <!-- Chat input area with an Enter button -->
+    <div class="chat-input" id="chatInputWrapper">
+      <input type="text" id="chatInput" placeholder="Type a message..." />
+      <button id="sendButton">Enter</button>
     </div>
   </div>
 
