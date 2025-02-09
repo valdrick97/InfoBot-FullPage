@@ -3,23 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chat Widget Test</title>
+  <title>Chat Widget Toggle Test</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Chat widget container -->
+  <!-- Chat widget container starts in closed state -->
   <div class="chat-container closed" id="chatContainer">
-    <!-- Chat image (avatar) -->
+    <!-- Chat image (the circle that moves) -->
     <div class="chat-image" id="chatImage"></div>
-    <!-- Chat header (banner) -->
+    <!-- Chat header (only visible when open) -->
     <div class="chat-header" id="chatHeader">Chat Assistant</div>
-    <!-- Chat messages area -->
+    <!-- Chat messages area (only visible when open) -->
     <div class="chat-messages" id="chatMessages">
       <p>Hello! How can I help you today?</p>
     </div>
-    <!-- Typing indicator -->
-    <div class="typing-indicator" id="typingIndicator">Typing...</div>
-    <!-- Chat input area with an Enter button -->
+    <!-- Chat input area (only visible when open) -->
     <div class="chat-input" id="chatInputWrapper">
       <input type="text" id="chatInput" placeholder="Type a message..." />
       <button id="sendButton">Enter</button>
