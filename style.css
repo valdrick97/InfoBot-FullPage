@@ -40,16 +40,6 @@ body {
   display: none;
 }
 
-/* Rolling animation for the bubble */
-@keyframes rollBubble {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(70%, -50%) rotate(360deg);
-  }
-}
-
 /* Open state: full chat widget centered in the screen */
 .chat-container.open {
   width: 320px;
@@ -160,6 +150,23 @@ body {
   display: none; /* Initially hidden */
 }
 
+/* Show the "Click me" message when the container is closed */
 .chat-container.closed:hover .chat-message-text {
   display: block; /* Show when hovered */
 }
+
+/* ---------- Rolling Animation for Circle ---------- */
+@keyframes rollBubble {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(70%, -50%) rotate(360deg);
+  }
+}
+
+/* ---------- Hover effect for the circle when closed */
+.chat-container.closed:hover {
+  animation: rollBubble 0.5s ease forwards; /* Apply roll animation */
+}
+
