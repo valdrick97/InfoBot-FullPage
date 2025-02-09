@@ -18,7 +18,7 @@ body {
 
 /* ---------- Chat Container (Closed vs. Open) ---------- */
 
-/* Closed state: a large circular button centered in the screen, with animation */
+/* Closed state: a larger circular button in the center of the screen */
 .chat-container.closed {
   width: 160px; /* Double the size */
   height: 160px;
@@ -31,20 +31,6 @@ body {
   transform: translate(-50%, -50%);
   transition: all 0.5s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  animation: bubbleMove 0.5s ease forwards;
-}
-
-/* Bounce animation for the bubble */
-@keyframes bubbleMove {
-  0% {
-    transform: translate(-50%, -50%) scale(0.8);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.1);
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
 }
 
 /* In closed state, hide the header, messages, and input */
@@ -52,6 +38,16 @@ body {
 .chat-container.closed .chat-messages,
 .chat-container.closed .chat-input {
   display: none;
+}
+
+/* Rolling animation for the bubble */
+@keyframes rollBubble {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(70%, -50%) rotate(360deg);
+  }
 }
 
 /* Open state: full chat widget centered in the screen */
@@ -149,4 +145,21 @@ body {
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
+}
+
+/* ---------- Message above circle ---------- */
+.chat-message-text {
+  position: absolute;
+  top: -30px; /* Adjust to place the message above the bubble */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #007bff;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+  display: none; /* Initially hidden */
+}
+
+.chat-container.closed:hover .chat-message-text {
+  display: block; /* Show when hovered */
 }
