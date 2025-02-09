@@ -2,28 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Chat Widget</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Widget Test</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Chat widget container -->
   <div class="chat-container closed" id="chatContainer">
-    <!-- Chat image shown above the container -->
+    <!-- Chat image (avatar) -->
     <div class="chat-image" id="chatImage"></div>
-    <!-- Chat header (label) -->
+    <!-- Chat header -->
     <div class="chat-header" id="chatHeader">Chat Assistant</div>
-    <!-- Chat messages area (initially hidden) -->
+    <!-- Chat messages area -->
     <div class="chat-messages" id="chatMessages">
-      <!-- Example message -->
       <p>Hello! How can I help you today?</p>
     </div>
-    <!-- Typing indicator (hidden until the user types) -->
+    <!-- Typing indicator -->
     <div class="typing-indicator" id="typingIndicator">Typing...</div>
     <!-- Chat input area -->
     <div class="chat-input">
       <input type="text" id="chatInput" placeholder="Type a message...">
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
