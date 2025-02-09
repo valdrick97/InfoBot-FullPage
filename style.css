@@ -18,7 +18,7 @@ body {
 
 /* ---------- Chat Container (Closed vs. Open) ---------- */
 
-/* Closed state:  larger circular button in the center of the screen */
+/* Closed state: a larger circular button in the center of the screen */
 .chat-container.closed {
   width: 160px; /* Double the size */
   height: 160px;
