@@ -2,30 +2,26 @@ document.addEventListener('DOMContentLoaded', function () {
   const chatContainer = document.getElementById('chatContainer');
   const chatInput = document.getElementById('chatInput');
   const sendButton = document.getElementById('sendButton');
-  const typingIndicator = document.getElementById('typingIndicator');
   const chatMessages = document.getElementById('chatMessages');
 
-  let hasInteracted = false;
-
-  // Open the chat widget on first interaction
-  function openChat() {
-    if (!hasInteracted) {
-      chatContainer.classList.add('typing');
-      setTimeout(function () {
-        chatContainer.classList.remove('typing');
-        chatContainer.classList.remove('closed');
-        chatContainer.classList.add('open');
-      }, 800);
-      hasInteracted = true;
+  // Toggle the chat open/closed when clicking on the container.
+  // (But ignore clicks on the input field or button so you can type.)
+  chatContainer.addEventListener('click', function (e) {
+    // If the click is on an input or button, do nothing.
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON') return;
+    
+    if (chatContainer.classList.contains('closed')) {
+      // Open the chat widget.
+      chatContainer.classList.remove('closed');
+      chatContainer.classList.add('open');
+    } else {
+      // Close the chat widget.
+      chatContainer.classList.remove('open');
+      chatContainer.classList.add('closed');
     }
-  }
-
-  // Open chat on input (first time only)
-  chatInput.addEventListener('input', function () {
-    openChat();
   });
 
-  // Submit message on Enter key press
+  // Submit message on Enter key press.
   chatInput.addEventListener('keydown', function (e) {
     if (e.key === 'Enter') {
       e.preventDefault();
@@ -33,12 +29,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Submit message on button click
-  sendButton.addEventListener('click', function () {
+  // Submit message on button click.
+  sendButton.addEventListener('click', function (e) {
+    e.stopPropagation(); // Prevent toggle when clicking the button.
     submitMessage();
   });
 
-  // Function to submit the message and display it in the messages area
+  // Function to submit the message and display it in the messages area.
   function submitMessage() {
     const message = chatInput.value.trim();
     if (message !== '') {
@@ -46,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
       messageElem.textContent = message;
       chatMessages.appendChild(messageElem);
       chatInput.value = '';
-      // Optionally scroll to the bottom
+      // Scroll to the bottom if needed.
       chatMessages.scrollTop = chatMessages.scrollHeight;
     }
   }
