@@ -1,34 +1,23 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const chatBox = document.getElementById("chatBox");
-  const userInput = document.getElementById("userInput");
-  const sendButton = document.getElementById("sendButton");
+// Grab elements by their IDs
+const chatContainer = document.getElementById('chatContainer');
+const chatInput     = document.getElementById('chatInput');
+const typingIndicator = document.getElementById('typingIndicator');
 
-  function sendMessage() {
-    const message = userInput.value.trim();
-    if (message === "") return;
+let hasInteracted = false;
 
-    // Add user message
-    addMessage(message, "user-message");
+// Listen for input events on the text field
+chatInput.addEventListener('input', function() {
+  if (!hasInteracted) {
+    // Add the "typing" state to show the typing indicator
+    chatContainer.classList.add('typing');
 
-    // Simulate bot response
+    // After a short delay, remove typing state and open the chat container
     setTimeout(() => {
-      addMessage("Hello! How can I assist you?", "bot-message");
-    }, 1000);
+      chatContainer.classList.remove('typing');   // Remove typing indicator
+      chatContainer.classList.remove('closed');     // Remove closed state
+      chatContainer.classList.add('open');          // Add open state to reveal messages
+    }, 800); // Delay in milliseconds (adjust as desired)
 
-    userInput.value = "";
+    hasInteracted = true; // Only run this once per session
   }
-
-  function addMessage(text, className) {
-    const messageDiv = document.createElement("div");
-    messageDiv.textContent = text;
-    messageDiv.classList.add(className);
-    chatBox.appendChild(messageDiv);
-
-    chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll
-  }
-
-  sendButton.addEventListener("click", sendMessage);
-  userInput.addEventListener("keypress", function(e) {
-    if (e.key === "Enter") sendMessage();
-  });
 });
