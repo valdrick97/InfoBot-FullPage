@@ -16,12 +16,12 @@ body {
   position: relative;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   overflow: hidden;
-  transition: height 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 /* ---------- Chat Header ---------- */
 .chat-header {
-  background-color: #007bff; /* You can change this if you wish */
+  background-color: #007bff;
   color: #fff;
   text-align: center;
   padding: 15px;
@@ -30,7 +30,7 @@ body {
   transition: transform 0.5s ease;
 }
 
-/* ---------- Chat Image (e.g., an avatar) ---------- */
+/* ---------- Chat Image (Avatar) ---------- */
 .chat-image {
   position: absolute;
   top: -40px;  /* Initial position when closed */
@@ -39,7 +39,7 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: url('your-image-url.jpg') no-repeat center center;
+  background: url('https://via.placeholder.com/80') no-repeat center center;
   background-size: cover;
   transition: top 0.5s ease;
 }
@@ -47,7 +47,7 @@ body {
 /* ---------- Chat Messages Area ---------- */
 .chat-messages {
   padding: 15px;
-  max-height: 0;  /* Initially hidden */
+  max-height: 0;  /* Hidden initially */
   overflow-y: hidden;
   transition: max-height 0.5s ease;
 }
@@ -90,7 +90,7 @@ body {
   transform: translateY(0);
 }
 .chat-container.open .chat-messages {
-  max-height: 300px;  /* Adjust as needed */
+  max-height: 300px;  /* Expand messages area */
 }
 .chat-container.open .chat-image {
   top: 0;
