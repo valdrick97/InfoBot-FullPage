@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chatbot</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Assistant</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="chat-wrapper">
-    <!-- Chat Bubble -->
-    <div class="chat-container closed">
-        <div class="chat-image"></div>
+
+    <div class="chat-wrapper">
+        <!-- Chat Bubble -->
+        <div class="chat-container closed" id="chat-circle">
+            <div class="chat-image"></div>
+            <span class="click-message">Click me to ask a question</span>
+        </div>
+
+        <!-- Input Box Below the Bubble -->
+        <div class="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Type a message...">
+            <button id="send-button">Send</button>
+        </div>
+
+        <!-- Chat Box (Hidden Initially) -->
+        <div class="chat-box hidden" id="chat-box">
+            <div class="chat-header">Chat Assistant</div>
+            <div class="chat-messages"></div>
+        </div>
     </div>
 
-    <!-- Input Box Below the Bubble -->
-    <div class="chat-input-container">
-        <input type="text" id="chat-input" placeholder="Type a message...">
-        <button id="send-button">Send</button>
-    </div>
+    <script src="chatbot.js"></script>
 
-    <!-- Chat Box (Hidden Initially) -->
-    <div class="chat-box hidden">
-        <div class="chat-header">Chat Assistant</div>
-        <div class="chat-messages"></div>
-    </div>
-</div>>
-
-  <script src="script.js"></script>
 </body>
 </html>
