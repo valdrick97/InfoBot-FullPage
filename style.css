@@ -73,10 +73,10 @@ body {
   display: none;
 }
 
-/* --------- Input Box (Now Much Lower) --------- */
+/* --------- Input Box (Lowered Even Further) --------- */
 .chat-input-container {
   position: fixed;
-  bottom: 50px; /* Lowered even further */
+  bottom: 30px; /* Positioned lower */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -143,12 +143,12 @@ body {
 /* --------- Circle and Chat Movement Animation --------- */
 @keyframes moveRight {
   0% { transform: translate(-50%, -50%); }
-  100% { transform: translate(250px, -50%); } /* Moves halfway to right */
+  100% { transform: translate(300px, -50%); } /* Circle moves halfway to right */
 }
 
 @keyframes moveLeft {
   0% { transform: translate(-50%, -50%); }
-  100% { transform: translate(-250px, -50%); } /* Moves halfway to left */
+  100% { transform: translate(-300px, -50%); } /* Chatbox moves halfway to left */
 }
 
 .chat-container.moved {
