@@ -1,72 +1,134 @@
-/* ---------- Chat Bubble (Closed State) ---------- */
-.chat-container.closed {
-  width: 160px; /* Enlarged */
+/* --------- General Reset --------- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* --------- Chat Wrapper (Holds Everything) --------- */
+.chat-wrapper {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* --------- Chat Bubble (Closed State) --------- */
+.chat-container {
+  width: 160px;
   height: 160px;
   border-radius: 50%;
   cursor: pointer;
-  position: fixed;
-  top: 45%; /* Centered vertically */
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   background-color: transparent;
   transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ** THE BLUE GLOWING CIRCLE (VISIBLE WHEN CLOSED) ** */
-.chat-container.closed::before {
+/* ** Blue Glowing Circle ** */
+.chat-container::before {
   content: "";
   position: absolute;
-  width: 180px; /* Slightly larger than the bubble */
+  width: 180px;
   height: 180px;
-  top: -10px;
-  left: -10px;
   border-radius: 50%;
-  border: 6px solid #007bff; /* Blue ring */
-  box-shadow: 0 0 15px #007bff; /* Glowing effect */
-  animation: pulse 1.5s infinite alternate; /* Glow animation */
+  border: 6px solid #007bff;
+  box-shadow: 0 0 15px #007bff;
+  animation: pulse 1.5s infinite alternate;
 }
 
 /* ** Glowing Animation ** */
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.1); opacity: 0.8; }
 }
 
-/* ** REMOVE THE BLUE RING WHEN OPENED ** */
-.chat-container.open::before {
-  display: none;
-}
-
-/* ---------- Chat Image (Inside the Bubble) ---------- */
+/* ** Chat Image Inside the Circle ** */
 .chat-image {
-  position: absolute;
   width: 120px;
   height: 120px;
   border-radius: 50%;
   background: url('https://placekitten.com/120/120') no-repeat center center;
   background-size: cover;
+}
+
+/* ** Click Message (Visible Only When Closed) ** */
+.click-message {
+  position: absolute;
+  bottom: -30px;
+  font-size: 14px;
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* ** Hide the Message When Open ** */
+.chat-container.moved .click-message {
+  display: none;
+}
+
+/* --------- Input Box Below the Chat Bubble --------- */
+.chat-input-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#chat-input {
+  width: 220px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+#send-button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#send-button:hover {
+  background-color: #0056b3;
+}
+
+/* --------- Chat Box (Initially Hidden) --------- */
+.chat-box {
+  position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 500px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* ** Chat Open Animation (Bubble Rolls to Right) ** */
-@keyframes rollBubble {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(80px, -50%) rotate(360deg);
-  }
+.chat-box.hidden {
+  display: none;
 }
 
-/* Apply Rolling Effect */
-.chat-container.open .chat-image {
-  animation: rollBubble 0.5s ease forwards;
+/* --------- Chat Header --------- */
+.chat-header {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
 }
+
+/*
