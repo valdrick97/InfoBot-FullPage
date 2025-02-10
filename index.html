@@ -7,22 +7,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Chat container -->
-  <div class="chat-container closed">
-    <!-- Message above the circle -->
-    <div class="chat-message-text">Click me to ask a question</div>
-    
-    <!-- Chat container content when open -->
-    <div class="chat-header">Chat Assistant</div>
-    <div class="chat-messages"></div>
-    <div class="chat-input">
-      <input type="text" placeholder="Type a message...">
-      <button>Send</button>
+  <div class="chat-wrapper">
+    <!-- Chat Bubble -->
+    <div class="chat-container closed">
+        <div class="chat-image"></div>
     </div>
 
-    <!-- Chatbot image on the right -->
-    <div class="chat-image"></div>
-  </div>
+    <!-- Input Box Below the Bubble -->
+    <div class="chat-input-container">
+        <input type="text" id="chat-input" placeholder="Type a message...">
+        <button id="send-button">Send</button>
+    </div>
+
+    <!-- Chat Box (Hidden Initially) -->
+    <div class="chat-box hidden">
+        <div class="chat-header">Chat Assistant</div>
+        <div class="chat-messages"></div>
+    </div>
+</div>>
 
   <script src="script.js"></script>
 </body>
