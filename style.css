@@ -76,7 +76,7 @@ body {
 /* --------- Input Box (Now Much Lower) --------- */
 .chat-input-container {
   position: fixed;
-  bottom: 80px; /* Moved much lower */
+  bottom: 50px; /* Lowered even further */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -109,7 +109,7 @@ body {
 .chat-box {
   position: fixed;
   top: 50%;
-  left: calc(50% - 250px); /* Even spacing, appears to the left of center */
+  left: 50%;
   width: 400px;
   height: 500px;
   background: white;
@@ -117,7 +117,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 10px;
   opacity: 0;
-  transform: translateY(-50%) scale(0.9);
+  transform: translate(-50%, -50%) scale(0.9);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
@@ -143,19 +143,20 @@ body {
 /* --------- Circle and Chat Movement Animation --------- */
 @keyframes moveRight {
   0% { transform: translate(-50%, -50%); }
-  100% { transform: translate(120px, -50%); }
+  100% { transform: translate(250px, -50%); } /* Moves halfway to right */
+}
+
+@keyframes moveLeft {
+  0% { transform: translate(-50%, -50%); }
+  100% { transform: translate(-250px, -50%); } /* Moves halfway to left */
 }
 
 .chat-container.moved {
   animation: moveRight 0.5s ease forwards;
 }
 
-@keyframes fadeInChat {
-  0% { opacity: 0; transform: translateY(-50%) scale(0.9); }
-  100% { opacity: 1; transform: translateY(-50%) scale(1); }
-}
-
 .chat-box.visible {
-  display: block;
-  animation: fadeInChat 0.5s ease forwards;
+  animation: moveLeft 0.5s ease forwards;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
