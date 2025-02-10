@@ -75,7 +75,7 @@ body {
 
 .chat-input-container {
   position: fixed;
-  bottom: -100px; 
+  bottom: -150px; 
   left: 70%;
   transform: translateX(-50%);
   display: flex;
