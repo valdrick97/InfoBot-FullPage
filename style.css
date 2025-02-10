@@ -20,8 +20,8 @@ body {
 
 /* --------- Chat Bubble (Closed State) --------- */
 .chat-container {
-  width: 160px;
-  height: 160px;
+  width: 870px;
+  height: 100px;
   border-radius: 50%;
   cursor: pointer;
   position: relative;
