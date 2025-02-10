@@ -62,7 +62,7 @@ body {
 /* ** Click Message (Visible Only When Closed) ** */
 .click-message {
   position: absolute;
-  bottom: -30px;
+  bottom: -60px;
   font-size: 14px;
   color: #007bff;
   font-weight: bold;
@@ -73,10 +73,9 @@ body {
   display: none;
 }
 
-/* --------- Input Box (Lowered Even Further) --------- */
 .chat-input-container {
   position: fixed;
-  bottom: 50px; /* Positioned lower than before */
+  bottom: 100px; 
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -109,7 +108,7 @@ body {
 .chat-box {
   position: fixed;
   top: 50%;
-  left: 20%;  /* Start from left of the screen */
+  left: 5%;  /* Start from left of the screen */
   width: 400px;
   height: 500px;
   background: white;
@@ -148,7 +147,7 @@ body {
 
 @keyframes moveLeft {
   0% { transform: translate(-50%, -50%); }
-  100% { transform: translate(20%, -50%); } /* Chatbox stays at 20% from the left */
+  100% { transform: translate(5%, -50%); } /* Chatbox stays at 20% from the left */
 }
 
 .chat-container.moved {
