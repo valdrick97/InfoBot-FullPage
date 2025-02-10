@@ -1,47 +1,27 @@
 // Get elements
-const chatContainer = document.querySelector('.chat-container');
-const chatImage = document.querySelector('.chat-image');
-const chatHeader = document.querySelector('.chat-header');
-const chatMessages = document.querySelector('.chat-messages');
-const chatInput = document.querySelector('.chat-input');
-const chatMessageText = document.querySelector('.chat-message-text');
+const chatContainer = document.getElementById("chat-circle");
+const chatBox = document.getElementById("chat-box");
+const chatInput = document.getElementById("chat-input");
+const sendButton = document.getElementById("send-button");
 
-// Toggle chat container
-chatContainer.addEventListener('click', () => {
-  if (chatContainer.classList.contains('closed')) {
-    chatContainer.classList.remove('closed');
-    chatContainer.classList.add('open');
-    chatImage.style.animation = 'none'; // Stop rolling animation when opening
-  } else {
-    chatContainer.classList.remove('open');
-    chatContainer.classList.add('closed');
-    chatImage.style.animation = 'rollBubble 0.5s ease forwards'; // Apply roll animation when closing
-  }
-});
-
-// Submit message using Enter key
-chatInput.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') {
-    submitMessage();
-  }
-});
-
-// Submit message using the submit button
-document.querySelector('.chat-input button').addEventListener('click', submitMessage);
-
-function submitMessage() {
-  const message = chatInput.querySelector('input').value;
-  if (message.trim()) {
-    // Add the message to the chat
-    const messageElement = document.createElement('div');
-    messageElement.classList.add('message');
-    messageElement.textContent = message;
-    chatMessages.appendChild(messageElement);
-
-    // Scroll to the bottom of the chat
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-
-    // Clear the input field
-    chatInput.querySelector('input').value = '';
-  }
+// Function to open chat
+function openChat() {
+    chatContainer.classList.add("moved"); // Move circle to the right
+    chatBox.classList.remove("hidden");  // Open chat box
+    chatBox.style.opacity = "1"; // Fade in smoothly
+    chatBox.style.transform = "translate(-50%, -50%) scale(1)";
 }
+
+// When user clicks send button
+sendButton.addEventListener("click", () => {
+    if (chatInput.value.trim() !== "") {
+        openChat();
+    }
+});
+
+// When user presses Enter key
+chatInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        openChat();
+    }
+});
