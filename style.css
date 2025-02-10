@@ -62,7 +62,7 @@ body {
 /* ** Click Message (Visible Only When Closed) ** */
 .click-message {
   position: absolute;
-  bottom: -60px;
+  bottom: -80px;
   font-size: 14px;
   color: #007bff;
   font-weight: bold;
@@ -74,21 +74,22 @@ body {
 }
 
 .chat-input-container {
-  position: fixed;
+  position: absolute;
   bottom: -150px; 
-  left: 70%;
+  left: 55%;
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
 }
 
 .chat-open .input-container {
-  bottom: 5%; /* Move it lower */
-  width: 600px; /* Double the width */
+  bottom: -80px; /* Move it lower */
+  width: 400px;
+  height: 50px;
 }
 
 #chat-input {
-  width: 260px;
+  width: 400px;
   padding: 12px;
   border: 2px solid #ccc;
   border-radius: 20px;
