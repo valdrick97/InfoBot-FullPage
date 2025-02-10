@@ -12,7 +12,7 @@ body {
 /* --------- Chat Wrapper (Holds Everything) --------- */
 .chat-wrapper {
   position: fixed;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -76,7 +76,7 @@ body {
 /* --------- Input Box (Lowered Even Further) --------- */
 .chat-input-container {
   position: fixed;
-  bottom: 60px; /* Positioned lower */
+  bottom: 50px; /* Positioned lower than before */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -143,12 +143,12 @@ body {
 /* --------- Circle and Chat Movement Animation --------- */
 @keyframes moveRight {
   0% { transform: translate(-50%, -50%); }
-  100% { transform: translate(50%, -50%); } /* Circle moves halfway to right */
+  100% { transform: translate(70%, -50%); } /* Circle moves further to the right */
 }
 
 @keyframes moveLeft {
   0% { transform: translate(-50%, -50%); }
-  100% { transform: translate(-50%, -50%); } /* Chatbox stays centered in left */
+  100% { transform: translate(-50%, -50%); } /* Chatbox stays in the center-left */
 }
 
 .chat-container.moved {
