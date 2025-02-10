@@ -62,7 +62,7 @@ body {
 /* ** Click Message (Visible Only When Closed) ** */
 .click-message {
   position: absolute;
-  bottom: -60px;
+  bottom: -10px;
   font-size: 14px;
   color: #007bff;
   font-weight: bold;
@@ -76,7 +76,7 @@ body {
 .chat-input-container {
   position: fixed;
   bottom: 100px; 
-  left: 50%;
+  left: 65%;
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
