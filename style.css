@@ -138,6 +138,12 @@ body {
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.9);
   transition: opacity 0.4s ease, transform 0.4s ease;
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
 }
 
 .chat-box.hidden {
