@@ -6,6 +6,7 @@ const sendButton = document.getElementById("send-button");
 
 // Function to open chat
 function openChat() {
+     document.body.classList.add("chat-open");
     chatContainer.classList.add("moved"); // Move circle smoothly to the right
     chatBox.classList.remove("hidden");  // Show chat box
     chatBox.classList.add("visible");    // Smoothly open chatbox to the left
