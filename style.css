@@ -41,7 +41,7 @@ body {
   border-radius: 50%;
   border: 6px solid #007bff;
   box-shadow: 0 0 15px #007bff;
-  animation: pulse 1.5s infinite alternate;
+  animation: pulse 2s infinite alternate;
 }
 
 /* ** Glowing Animation ** */
@@ -52,11 +52,12 @@ body {
 
 /* ** Chat Image Inside the Circle ** */
 .chat-image {
-  width: 120px;
-  height: 120px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  background: url('https://github.com/valdrick97/Tester/blob/main/chatbot-icon%20(3).png') no-repeat center center;
+  background: url('https://raw.githubusercontent.com/valdrick97/Tester/main/chatbot-icon%20(3).png') no-repeat center center;
   background-size: cover;
+  animation: pulse 2s infinite alternate;
 }
 
 /* ** Click Message (Visible Only When Closed) ** */
@@ -75,7 +76,7 @@ body {
 
 .chat-input-container {
   position: absolute;
-  bottom: -150px; 
+  bottom: -150px;
   left: 55%;
   transform: translateX(-50%);
   display: flex;
@@ -84,7 +85,7 @@ body {
 
 .chat-open .input-container {
   bottom: 5%; /* Move it lower */
-  width: 600px;
+  width: 600px; /* Double the width */
 }
 
 #chat-input {
@@ -95,12 +96,12 @@ body {
   font-size: 16px;
 }
 
-.chat-open #chat-input {
-  bottom: -160px;
-  width: 600px;
-  height: 18px;
-  left: -400%;
-  position: fixed;
+.chat-open #chat-input { 
+    bottom: -160px; /* Move it further down when open */
+    width: 600px; /* Expand width */
+    height: 18px;
+    left: -400%;
+    position: fixed;
 }
 
 #send-button {
