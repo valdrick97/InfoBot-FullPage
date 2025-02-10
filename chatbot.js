@@ -96,7 +96,7 @@ function resetInactivityTimer() {
 
 // Handle user input and bot response
 function sendMessage() {
-  const userInput = document.getElementById('userInput').value.trim();
+  const userInput = document.getElementById('chat-input').value.trim();
 
   // Prevent sending an empty message
   if (!userInput) {
@@ -125,7 +125,7 @@ function sendMessage() {
 }
 
   addMessage(response, 'bot');
-  document.getElementById('userInput').value = '';
+  document.getElementById('chat-input').value = '';
   }
 
   function normalize(text) {
@@ -137,7 +137,7 @@ function sendMessage() {
   }
 
 // Send message when user presses enter
-document.getElementById('userInput').addEventListener('keypress', function (e) {
+document.getElementById('chat-input').addEventListener('keypress', function (e) {
   if (e.key === 'Enter') {
     sendMessage();
   }
@@ -196,9 +196,9 @@ function handleInactivityResponse(response) {
 }
 
 // Listen for yes/no responses to the inactivity prompt
-document.getElementById('userInput').addEventListener('keypress', function (e) {
+document.getElementById('chat-input').addEventListener('keypress', function (e) {
   if (e.key === 'Enter') {
-    const userInput = document.getElementById('userInput').value.trim();
+    const userInput = document.getElementById('chat-input').value.trim();
     if (isInactivityPromptShown && (userInput.toLowerCase() === 'yes' || userInput.toLowerCase() === 'no')) {
       handleInactivityResponse(userInput);
     }
