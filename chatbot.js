@@ -6,9 +6,9 @@ const sendButton = document.getElementById("send-button");
 
 // Function to open chat
 function openChat() {
-    chatContainer.classList.add("moved"); // Move circle to the right
+    chatContainer.classList.add("moved"); // Move circle halfway to the right
     chatBox.classList.remove("hidden");  // Show chat box
-    chatBox.classList.add("visible");    // Smooth fade-in
+    chatBox.classList.add("visible");    // Move halfway to the left smoothly
 }
 
 // When user clicks send button
