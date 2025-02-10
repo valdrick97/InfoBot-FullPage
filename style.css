@@ -75,11 +75,16 @@ body {
 
 .chat-input-container {
   position: fixed;
-  bottom: 10px; 
+  bottom: -30px; 
   left: 70%;
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
+}
+
+.chat-open .input-container {
+  bottom: 5%; /* Move it lower */
+  width: 600px; /* Double the width */
 }
 
 #chat-input {
