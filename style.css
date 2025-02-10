@@ -100,7 +100,7 @@ body {
   width: 600px;
   height: 18px;
   left: -400%
-  position: absolute;;
+  position: fixed;
 }
 
 #send-button {
