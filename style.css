@@ -109,7 +109,7 @@ body {
 .chat-box {
   position: fixed;
   top: 50%;
-  left: 50%;
+  left: 20%;  /* Start from left of the screen */
   width: 400px;
   height: 500px;
   background: white;
@@ -143,12 +143,12 @@ body {
 /* --------- Circle and Chat Movement Animation --------- */
 @keyframes moveRight {
   0% { transform: translate(-50%, -50%); }
-  100% { transform: translate(70%, -50%); } /* Circle moves further to the right */
+  100% { transform: translate(45%, -50%); } /* Circle moves further to the right */
 }
 
 @keyframes moveLeft {
   0% { transform: translate(-50%, -50%); }
-  100% { transform: translate(-50%, -50%); } /* Chatbox stays in the center-left */
+  100% { transform: translate(20%, -50%); } /* Chatbox stays at 20% from the left */
 }
 
 .chat-container.moved {
