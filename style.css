@@ -83,9 +83,8 @@ body {
 }
 
 .chat-open .input-container {
-  bottom: -80px; /* Move it lower */
-  width: 400px;
-  height: 50px;
+  bottom: 5%; /* Move it lower */
+  width: 600px;
 }
 
 #chat-input {
@@ -94,6 +93,14 @@ body {
   border: 2px solid #ccc;
   border-radius: 20px;
   font-size: 16px;
+}
+
+.chat-open #chat-input {
+  bottom: -160px;
+  width: 600px;
+  height: 18px;
+  left: -400%
+  position: absolute;;
 }
 
 #send-button {
