@@ -13,7 +13,7 @@ widget.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
 
 // Add an iframe to load your bot
 const iframe = document.createElement('iframe');
-iframe.src = 'https://username.github.io/repository-name';
+iframe.src = 'https://valdrick97.github.io/InfoBot-FullPage/';
 iframe.style.width = '100%';
 iframe.style.height = '100%';
 iframe.style.border = 'none';
