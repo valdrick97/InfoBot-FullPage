@@ -3,7 +3,6 @@ const chatContainer = document.getElementById("chat-circle");
 const chatBox = document.getElementById("chat-box");
 const chatInput = document.getElementById("chat-input");
 const sendButton = document.getElementById("send-button");
-const quickButtons = document.querySelectorAll('.quick-button');
 let faqData = [];
 let fuzzySet = null;
 let categories = [];
