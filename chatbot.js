@@ -94,15 +94,6 @@ function resetInactivityTimer() {
   }, 10 * 60 * 1000); // 10 minutes
 }
 
-// Add event listeners to the buttons
-quickButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const question = button.getAttribute('data-question');
-    document.getElementById('chat-input').value = question; // Set the input value
-    sendMessage(); // Trigger the send function
-  });
-});
-
 // Handle user input and bot response
 function sendMessage() {
   const userInput = document.getElementById('chat-input').value.trim();
