@@ -220,3 +220,15 @@ fetch('faqData.json')
     console.error('Error loading FAQ data:', error);
     addMessage("Sorry, I'm having trouble loading my knowledge base. Please try again later.", 'bot');
   });
+
+// Get all quick buttons
+const quickButtons = document.querySelectorAll('.quick-button');
+
+// Add event listeners to the buttons
+quickButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const question = button.getAttribute('data-question');
+    document.getElementById('chat-input').value = question; // Set the input value
+    sendMessage(); // Trigger the send function
+  });
+});
