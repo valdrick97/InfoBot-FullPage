@@ -22,16 +22,16 @@
         </div>
 
         <!-- Input Box (Positioned Lower) -->
-        <div class="chat-input-container">
-            <input type="text" id="chat-input" placeholder="Type a message...">
-            <button id="send-button">Send</button>
-        </div>
-    </div>
-        <div id="quick-buttons">
-          <button class="quick-button" data-question="What are your hours?">Hours</button>
-          <button class="quick-button" data-question="Where are you located?">Location</button>
-          <button class="quick-button" data-question="How can I contact you?">Contact</button>
-        </div>
+        <div id="chat-box">
+  <!-- Chat messages will appear here -->
+</div>
+<input type="text" id="chat-input" placeholder="Type your question...">
+<button id="send-button">Send</button>
+<div id="quick-buttons">
+  <button class="quick-button" data-question="What are your hours?">Hours</button>
+  <button class="quick-button" data-question="Where are you located?">Location</button>
+  <button class="quick-button" data-question="How can I contact you?">Contact</button>
+</div>
     
     <script src="chatbot.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fuzzyset.js"></script>
