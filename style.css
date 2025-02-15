@@ -211,3 +211,9 @@ body {
   word-wrap: break-word;
   opacity: 1; /* Make sure user messages stay bright by default */
 }
+
+<div id="quick-buttons">
+  <button class="quick-button" data-question="What are your hours?">Hours</button>
+  <button class="quick-button" data-question="Where are you located?">Location</button>
+  <button class="quick-button" data-question="How can I contact you?">Contact</button>
+</div>
