@@ -9,6 +9,17 @@
       "answer": " I can not at this time. After 24hours all inputs will be deleted."
     },
     {
+      "question": "What are the casino hours?",
+      "answer": "The casino is open 24/7."
+    },
+    {
+      "question": "Where are you located?",
+      "answer": "Our office is located at 123 Main Street, City, Country."
+    },
+    {
+      "question": " How can I contact you?",
+      "answer": " By phone or email at ......
+    {
       "question": "Who made you?",
       "answer": " I was made by Sidney Rozas"
     },
@@ -27,10 +38,6 @@
     {
       "question": "What are you?",
       "answer": "I'm a friendly chatbot, programmed to help you find the answers you're looking for."
-    },
-    {
-      "question": "What are the casino hours?",
-      "answer": "The casino is open 24/7."
     },
     {
       "question": "What can you do?",
