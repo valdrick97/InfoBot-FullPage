@@ -257,3 +257,18 @@ fetch('translations.json')
   .catch(error => {
     console.error('Error loading translations:', error);
   });
+
+function detectUserLanguage() {
+  const userLanguage = navigator.language.split('-')[0]; // Get the primary language (e.g., "en" from "en-US")
+  const supportedLanguages = ['en', 'es', 'fr']; // List of supported languages
+
+  // Check if the detected language is supported
+  if (supportedLanguages.includes(userLanguage)) {
+    return userLanguage;
+  }
+
+  // Default to English if the detected language is not supported
+  return 'en';
+}
+
+let currentLanguage = detectUserLanguage();
