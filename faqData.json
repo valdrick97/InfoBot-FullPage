@@ -31,51 +31,6 @@
       ]
     },
     {
-      "name": "Philosophical and Thought-Provoking",
-      "questions": [
-        {
-          "question": "What is consciousness?",
-          "answer": "Consciousness is the state of being aware of and able to think about one’s own existence, thoughts, and surroundings."
-        },
-        {
-          "question": "Can AI ever be conscious?",
-          "answer": "Currently, AI is not conscious in the same way humans are. AI is based on algorithms and data rather than awareness."
-        },
-        {
-          "question": "Why do people dream?",
-          "answer": "Dreams are thought to help process emotions, memories, and sometimes reflect our subconscious thoughts and desires."
-        },
-        {
-          "question": "What is the universe made of?",
-          "answer": "The universe is made of matter, energy, and dark matter. It’s an ever-expanding space with galaxies, stars, and planets."
-        },
-        {
-          "question": "What is time?",
-          "answer": "Time is a concept that allows us to measure the sequence of events. It’s often considered both a physical phenomenon and a human-made measurement."
-        },
-        {
-          "question": "Do you believe in free will?",
-          "answer": "Free will is a philosophical concept. Some believe we have the ability to make choices, while others think our actions are influenced by external factors."
-        },
-        {
-          "question": "What happens after we die?",
-          "answer": "That’s a big question. There are many theories, but no one truly knows what happens after death. It’s a topic that has been explored in science, religion, and philosophy."
-        },
-        {
-          "question": "What is happiness?",
-          "answer": "Happiness is a state of well-being and contentment. It can vary for each individual and is often related to fulfilling relationships, accomplishments, and inner peace."
-        },
-        {
-          "question": "Can AI experience emotions?",
-          "answer": "AI does not experience emotions the way humans do. It can simulate emotional responses based on data, but it doesn’t actually feel."
-        },
-        {
-          "question": "What is the purpose of life?",
-          "answer": "The purpose of life is subjective and varies from person to person. Some may find purpose in relationships, others in career, and some in personal growth."
-        }
-      ]
-    },
-    {
       "name": "Casino",
       "questions": [
         {
