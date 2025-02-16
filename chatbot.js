@@ -243,7 +243,7 @@ fetch('faqData.json')
   });
 
  console.log('FAQ data loaded successfully!');
-  })
+  }
   .catch(error => {
     console.error('Error loading FAQ data:', error);
   });
