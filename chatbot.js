@@ -220,4 +220,3 @@ fetch('faqData.json')
     console.error('Error loading FAQ data:', error);
     addMessage("Sorry, I'm having trouble loading my knowledge base. Please try again later.", 'bot');
   });
-
