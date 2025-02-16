@@ -205,18 +205,37 @@ document.getElementById('chat-input').addEventListener('keypress', function (e) 
   }
 });
 
-// Fetch FAQ data and categories
+// Load FAQ data
 fetch('faqData.json')
-  .then(response => {
-    if (!response.ok) throw new Error('Failed to load FAQ data');
-    return response.json();
-  })
+  .then(response => response.json())
   .then(data => {
-    faqData = data.faqs;
-    fuzzySet = FuzzySet(faqData.map(faq => faq.question));
-    fuzzySet = FuzzySet(faqData.map(faq => normalize(faq.question)));
-  })
-  .catch(error => {
-    console.error('Error loading FAQ data:', error);
-    addMessage("Sorry, I'm having trouble loading my knowledge base. Please try again later.", 'bot');
-  });
+    const faqMap = new Map();
+    const fuzzySet = FuzzySet();
+
+    // Preprocess data
+    data.categories.forEach(category => {
+      category.questions.forEach(qa => {
+        const normalizedQuestion = normalize(qa.question);
+        faqMap.set(normalizedQuestion, qa.answer);
+        fuzzySet.add(normalizedQuestion); // Add to fuzzy set
+      });
+    });
+
+    // Function to find the best match
+    function findBestMatch(userInput) {
+      const normalizedInput = normalize(userInput);
+
+      // Try an exact match first
+      if (faqMap.has(normalizedInput)) {
+        return faqMap.get(normalizedInput);
+      }
+
+      // Fall back to fuzzy matching
+      const fuzzyMatches = fuzzySet.get(normalizedInput);
+      if (fuzzyMatches && fuzzyMatches.length > 0 && fuzzyMatches[0][0] > 0.7) {
+        const bestMatch = fuzzyMatches[0][1]; // Get the best match
+        return faqMap.get(bestMatch);
+      }
+
+      return "I couldn't find a matching answer. Can you rephrase your question?";
+    }
