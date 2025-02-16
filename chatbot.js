@@ -239,4 +239,4 @@ fetch('faqData.json')
 
       return "I couldn't find a matching answer. Can you rephrase your question?";
     }
-  }
+  });
