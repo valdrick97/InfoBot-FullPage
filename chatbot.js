@@ -13,6 +13,8 @@ let isChatInitialized = false;
 let inactivityTimer;  // Timer for inactivity
 let isInactivityPromptShown = false; // Flag to prevent repeated inactivity prompts
 let isPromptDisplayed = false; // Flag to track if the prompt is shown
+let translations = {};
+let currentLanguage = 'en';
 
 // Function to open chat
 function openChat() {
@@ -245,3 +247,13 @@ function findBestMatch(userInput) {
   return "I couldn't find a matching answer. Can you rephrase your question?";
 }
 
+// Load translations
+fetch('translations.json')
+  .then(response => response.json())
+  .then(data => {
+    translations = data;
+    setLanguage(currentLanguage); // Set default language
+  })
+  .catch(error => {
+    console.error('Error loading translations:', error);
+  });
