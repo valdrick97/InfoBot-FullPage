@@ -215,34 +215,33 @@ fetch('faqData.json')
        faqData.forEach(qa => {
            faqMap.set(normalize(qa.question), qa.answer);
        });
+
+       // Preprocess data
+       data.categories.forEach(category => {
+         category.questions.forEach(qa => {
+           const normalizedQuestion = normalize(qa.question);
+           faqMap.set(normalizedQuestion, qa.answer);
+           fuzzySet.add(normalizedQuestion); // Add to fuzzy set
+         });
+       });
    });
 
-    // Preprocess data
-    data.categories.forEach(category => {
-      category.questions.forEach(qa => {
-        const normalizedQuestion = normalize(qa.question);
-        faqMap.set(normalizedQuestion, qa.answer);
-        fuzzySet.add(normalizedQuestion); // Add to fuzzy set
-      });
-    });
+// Function to find the best match
+function findBestMatch(userInput) {
+  const normalizedInput = normalize(userInput);
 
-    // Function to find the best match
-    function findBestMatch(userInput) {
-      const normalizedInput = normalize(userInput);
+  // Try an exact match first
+  if (faqMap.has(normalizedInput)) {
+    return faqMap.get(normalizedInput);
+  }
 
-      // Try an exact match first
-      if (faqMap.has(normalizedInput)) {
-        return faqMap.get(normalizedInput);
-      }
+  // Fall back to fuzzy matching
+  const fuzzyMatches = fuzzySet.get(normalizedInput);
+  if (fuzzyMatches && fuzzyMatches.length > 0 && fuzzyMatches[0][0] > 0.7) {
+    const bestMatch = fuzzyMatches[0][1]; // Get the best match
+    return faqMap.get(bestMatch);
+  }
 
-      // Fall back to fuzzy matching
-      const fuzzyMatches = fuzzySet.get(normalizedInput);
-      if (fuzzyMatches && fuzzyMatches.length > 0 && fuzzyMatches[0][0] > 0.7) {
-        const bestMatch = fuzzyMatches[0][1]; // Get the best match
-        return faqMap.get(bestMatch);
-      }
-
-      return "I couldn't find a matching answer. Can you rephrase your question?";
-    }
-  });
+  return "I couldn't find a matching answer. Can you rephrase your question?";
+}
 
