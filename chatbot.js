@@ -4,8 +4,8 @@ const chatBox = document.getElementById("chat-box");
 const chatInput = document.getElementById("chat-input");
 const sendButton = document.getElementById("send-button");
 let faqData = [];
-let fuzzySet = null;
-let faqMap = null;
+let fuzzySet = FuzzySet();
+let faqMap = new Map();
 let categories = [];
 let popupTimeout;
 let popupInterval;
@@ -68,11 +68,11 @@ function displayGreetingIfEmpty() {
 
 // Add a message to the chat box
 function addMessage(text, sender) {
-  const message = document.createElement('div');
-  message.textContent = text;
-  message.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
-  chatBox.appendChild(message);
-  chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom of the chat box
+   const message = document.createElement('div');
+   message.textContent = text;
+   message.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+   chatBox.appendChild(message);
+   chatBox.scrollTop = chatBox.scrollHeight;// Scroll to the bottom of the chat box
   
   // Only show the greeting message if it hasn't been shown before
   if (!isChatInitialized) {
@@ -115,19 +115,19 @@ function sendMessage() {
   }
 
   addMessage(userInput, 'user');
-  let bestMatch = fuzzySet.get(userInput);
-  let response = "I'm sorry, I don't understand that question.";
+   let bestMatch = fuzzySet.get(userInput); // Ensure fuzzySet is initialized
+   let response = "I'm sorry, I don't understand that question.";
 
-  if (bestMatch && bestMatch.length > 0 && bestMatch[0][0] > 0.7) {
-  let faq = faqData.find(f => normalize(f.question) === bestMatch[0][1]); // Directly using bestMatch[0][1]
-  response = faq ? faq.answer : "I couldn't find a matching answer. Can you rephrase your question?";
-} else {
-  response = "I couldn't find a matching answer. Can you rephrase your question?";
+   if (bestMatch && bestMatch.length > 0 && bestMatch[0][0] > 0.7) {
+       let faq = faqData.find(f => normalize(f.question) === bestMatch[0][1]);
+       response = faq ? faq.answer : "I couldn't find a matching answer. Can you rephrase your question?";
+   } else {
+       response = "I couldn't find a matching answer. Can you rephrase your question?";
+   }
+
+   addMessage(response, 'bot');
+   document.getElementById('chat-input').value = '';
 }
-
-  addMessage(response, 'bot');
-  document.getElementById('chat-input').value = '';
-  }
 
   function normalize(text) {
     return text
@@ -208,10 +208,14 @@ document.getElementById('chat-input').addEventListener('keypress', function (e) 
 
 // Load FAQ data
 fetch('faqData.json')
-  .then(response => response.json())
-  .then(data => {
-    const faqMap = new Map();
-    const fuzzySet = FuzzySet();
+   .then(response => response.json())
+   .then(data => {
+       faqData = data.categories.flatMap(category => category.questions);
+       fuzzySet = FuzzySet(faqData.map(qa => normalize(qa.question)));
+       faqData.forEach(qa => {
+           faqMap.set(normalize(qa.question), qa.answer);
+       });
+   });
 
     // Preprocess data
     data.categories.forEach(category => {
