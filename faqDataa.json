@@ -1,1 +1,34 @@
-
+{
+  "categories": [
+    {
+      "name": "LMS",
+      "questions": [
+        {
+          "question": "How do I reset my password?",
+          "answer": "To reset your password, go to the login page and click 'Forgot Password'."
+        },
+        {
+          "question": "How do I access my courses?",
+          "answer": "You can access your courses by logging into the LMS and navigating to the 'My Courses' section."
+        },
+        {
+          "question": "What is the tribal rates?",
+          "answer": "The tribal rates are available on the LMS under the 'Rates' section."
+        }
+      ]
+    },
+    {
+      "name": "Pool",
+      "questions": [
+        {
+          "question": "When is the pool opening?",
+          "answer": "The pool opens at 8 AM daily."
+        },
+        {
+          "question": "Is the pool open?",
+          "answer": "Yes, the pool is open from 8 AM to 10 PM."
+        }
+      ]
+    }
+  ]
+}
