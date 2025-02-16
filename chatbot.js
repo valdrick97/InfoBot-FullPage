@@ -5,6 +5,7 @@ const chatInput = document.getElementById("chat-input");
 const sendButton = document.getElementById("send-button");
 let faqData = [];
 let fuzzySet = null;
+let faqMap = null;
 let categories = [];
 let popupTimeout;
 let popupInterval;
@@ -239,4 +240,10 @@ fetch('faqData.json')
 
       return "I couldn't find a matching answer. Can you rephrase your question?";
     }
+  });
+
+ console.log('FAQ data loaded successfully!');
+  })
+  .catch(error => {
+    console.error('Error loading FAQ data:', error);
   });
