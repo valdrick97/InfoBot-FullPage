@@ -1,5 +1,116 @@
 {
   "categories": [
+        {
+          "name": "Standard Deals",
+          "questions": [
+            {
+              "question": " Any promotions, discounts or promotions for any of the hotels?",
+              "answer": "Yes we have both our standard discounts and our Monthly Promotions. Which hotel are you looking for?"
+            },
+            {
+              "question": "Grand Hotel (GH)",
+              "answer": "There are 3 options. GAARP, GMIL OR GNAAM. GAARP is a 10% discount for AARP Members. They must have their AARP ID at checkin. GMIL is a 25% discount for Active or Retired Military Only! Must have Mil ID at checkin. GNaam is a 25% discount for any Native American Tribe that isnt Coushatta Tribe of Louisiana. Must have their Id."
+            },
+            {
+              "question": " Seven Clans (SC)",
+              "answer"L: "There are 3 options. SCAARP, SMIL OR SCNAAM. SCAARP is a 10% discount for AARP Members. They must have their AARP ID at checkin. SMIL is a 25% discount for Active or Retired Military Only! Must have Mil ID at checkin. SCNaam is a 25% discount for any Native American Tribe that isnt Coushatta Tribe of Louisiana. Must have their Id."
+            },
+            {
+            "question": " The Inn (In)",
+            "answer" " There are 2 options. INNMIL is a 25% discount for Active or Retired Military Only! Must have Mil ID at checkin. INAAM is a 25% discount for any Native American Tribe that isnt Coushatta Tribe of Louisiana. Must have their Id."
+            },
+            {
+            "question": "Chalet",
+            "answer": " There are 2 options. RMIL is a 25% discount for Active or Retired Military Only! Must have Mil ID at checkin. RNAAM is a 25% discount for any Native American Tribe that isnt Coushatta Tribe of Louisiana. Must have their Id."
+            },
+            {
+            "question": "RV",
+            "answer": " There is 1 option. GOODRV must have their Good Sams Member ID at checkin"
+        }
+      ]
+    },
+    {
+      "name": "Monthly Deals",
+      "questions": [
+        {
+          "question": "Current monthly deals",
+          "answer": " The current active Monthly codes are Cupid and Love. Which would you like to see details on?"
+        },
+        {
+          "question": "Cupid",
+          "answer": "Sunday to Thursday Only, $99 for SC or $69 for Inn/Chalet. Dates 2/2 to 2/27"
+        },
+        {
+          "question": "Love",
+          "answer": " Sunday to Thursday Only, $139 for SC. This includes a $50 dining credit. Dates 2/2 to 2/27."
+        },
+        {
+          "question": "Quest",
+          "answer": "Sunday to Thursday Only, $139 for Inn. This includes a $50 Kids Quest Credit. Dates 3/9 to 4/03."
+        }
+      ]
+    },
+    {
+      "name": "Group Codes",
+      "questions": [
+        {
+          "questions": "CROSS25",
+          "answer": "For the Inn, $79KD, $99QD. Owner is LaTanya Cross. Must reserve dates by 3/02/2025. Reservation dates are 3/16/2025 to 3/17/2025. Go to the Group Codes tab on the website to see all the active codes."
+        },
+        {
+          "questions": "WATTS25",
+          "answer": "For the SC, $99KD, $129QD. Owner is Jeff Watts. Must reserve dates by 3/16/2025. Reservation dates are 3/31/2025 to 04/01/2025. Go to the Group Codes tab on the website to see all the active codes."
+        },
+        {
+          "questions": "LGAGOL2",
+          "answer": "For the SC. $199KD, $229QD. Owner is Jacob Oakes. Must reserve dates by 4/19/2025. Reservation dates are 5/03/2025 to 5/04/2025. Go to the Group Codes tab on the website to see all the active codes."
+        },
+        {
+          "questions": "COLBERT",
+          "answer": "For the SC. $129QD. Owner is Gene Colbert. Must reserve dates by 3/14/2025. Reservation dates are 3/31/2025 to 4/02/2025. Go to the Group Codes tab on the website to see all the active codes."
+        },
+        {
+          "questions": "POKER25",
+          "answer": "For the SC/INN. For the SC the rates are $99. For the INN the rates are $69. Owner is Poker Tournament. Reservation dates are between April 1st  to April 14th. Go to the Group Codes tab on the website to see all the active codes."
+        },
+        {
+          "questions": "CRAIN25",
+          "answer": "For the SC. Wed rates are $129KD, $149QD. Thur rates are $109KD, $129QD. Owner is Norman Crain. Must reserve dates by 4/23/2025. Reservation dates are 5/09/2025 to 5/10/2025. Go to the Group Codes tab on the website to see all the active codes."
+        },
+        {
+          "questions": "GOLDEN1",
+          "answer": "For the INN. $99KD, $109QD. Owner is Sabrina Champagne. Must reserve dates by 8/11/2025. Reservation dates are 8/27/2025 to 8/28/2025. Go to the Group Codes tab on the website to see all the active codes."
+        },
+        {
+          "questions": "POW25",
+          "answer": "For the INN/Chalet. $159 Per Night. For anyone that is going ot the Powwow. Dates: June 13th and 14th. If they are Coushatta Tribe of Louisiana, then change the rate to tribal. Go to the Group Codes tab on the website to see all the active codes."
+        },
+        {
+          "questions": "BAYOU25",
+          "answer": "For the RV Site. $49 Per Night. Owner is Bayou Roller RV Group. Must reserve dates by 6/18/2025. Reservation dates are 7/18/2025 to 7/20/2025. Go to the Group Codes tab on the website to see all the active codes."
+        },
+        {
+          "questions": "ROCK252",
+          "answer": "For the INN. $89KD/QD. Owner is Rockport Tours. Must reserve dates by 2/23/2025. Reservation dates are 3/25/2025 to 3/26/2025. Go to the Group Codes tab on the website to see all the active codes."
+        },
+        {
+          "questions": "ROCK253",
+          "answer": "For the INN. Tuesday rates $79KD/QD, Wednesday rates $99 KD/QD. Owner is Rockport Tours. Must reserve dates by 3/23/2025. Reservation dates are 4/22/2025 to 4/24/2025. Go to the Group Codes tab on the website to see all the active codes."
+        },
+        {
+          "questions": "4ACES25",
+          "answer": "For the SC. Wednesday and Thursday rates $129QD. Friday and Saturday rates $229QD. Owner is 4 Aces Golf Group. Must reserve dates by 3/25/2025. Reservation dates are 4/09/2025 to 4/13/2025. Go to the Group Codes tab on the website to see all the active codes."
+        },
+        {
+          "questions": "MERE25",
+          "answer": "For the SC. Saturday rates $159QD. Sunday rates $99QD. Owner is Mere Golf Group. Must reserve dates by 5/3/2025. Reservation dates are 5/17/2025 to 5/19/2025. Go to the Group Codes tab on the website to see all the active codes."
+        },
+        {
+          "questions": "SNOWMEN",
+          "answer": "For the SC. Thursday rates $89KD, $109QD. Friday and Saturday rates $179KD, $199QD. Owner is Ray Huhn. Must reserve dates by 9/17/2025. Reservation dates are 10/02/2025 to 10/05/2025. Go to the Group Codes tab on the website to see all the active codes."
+        }
+      ]
+    },
     {
       "name": "LMS",
       "questions": [
@@ -183,6 +294,10 @@
         {
           "question": "What can you do?",
           "answer": "I can assist with any basic questions you have about CCR and Reservations. And don't worry—exciting new features are on the way soon!"
+        },
+        {
+          "question": "What Group Codes are there?"
+          "answer": "There are a handful of Group Codes currently active. Just type in the code and i'll pull up the information for you."
         },
         {
           "question": "Hello",
