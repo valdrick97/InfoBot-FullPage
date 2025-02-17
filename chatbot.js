@@ -130,7 +130,7 @@ function sendMessage() {
 }
 
   function normalize(text) {
-       if (typeof text !== 'string){
+       if (typeof text !== 'string') {
            return '';
   }
     return text
