@@ -130,6 +130,9 @@ function sendMessage() {
 }
 
   function normalize(text) {
+       if (typeof text !== 'string){
+           return '';
+  }
     return text
       .toLowerCase()
       .replace(/[^\w\s]|_/g, "")  // Remove punctuation
