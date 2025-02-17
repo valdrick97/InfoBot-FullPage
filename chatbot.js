@@ -248,7 +248,7 @@ function findBestMatch(userInput) {
     if (faqMap.has(normalizedInput)) {
         return faqMap.get(normalizedInput);
     }
-
+}
     // Fall back to fuzzy matching
     const fuzzyMatches = fuzzySet.get(normalizedInput);
     if (fuzzyMatches && fuzzyMatches.length > 0 && fuzzyMatches[0][0] > 0.7) {
