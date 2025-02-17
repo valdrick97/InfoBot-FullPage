@@ -115,27 +115,29 @@ function sendMessage() {
     }
 
     addMessage(userInput, 'user');
-    const hasNumbers = /\d/.test(userInput);
-    let response = "I'm sorry, I don't understand that question.";
 
-    if (hasNumbers) {
-        const normalizedInput = normalize(userInput);
-        const faq = faqData.find(f => normalize(f.question).includes(normalizedInput));
-        response = faq ? faq.answer : "I couldn't find a matching answer. Can you rephrase your question?";
-    } else {
-        let bestMatch = fuzzySet.get(userInput); // Ensure fuzzySet is initialized
+    // Normalize the user input
+    const normalizedInput = normalize(userInput);
 
-        if (bestMatch && bestMatch.length > 0 && bestMatch[0][0] > 0.7) {
-            let faq = faqData.find(f => normalize(f.question) === bestMatch[0][1]);
-            response = faq ? faq.answer : "I couldn't find a matching answer. Can you rephrase your question?";
-        } else {
-            response = "I couldn't find a matching answer. Can you rephrase your question?";
+    // Try to find an exact match first
+    let response = faqMap.get(normalizedInput);
+
+    // If no exact match, try fuzzy matching
+    if (!response) {
+        const fuzzyMatches = fuzzySet.get(normalizedInput);
+        if (fuzzyMatches && fuzzyMatches.length > 0 && fuzzyMatches[0][0] > 0.7) {
+            const bestMatch = fuzzyMatches[0][1]; // Get the best match
+            response = faqMap.get(bestMatch);
         }
+    }
+
+    // If no match is found, provide a default response
+    if (!response) {
+        response = "I couldn't find a matching answer. Can you rephrase your question?";
     }
 
     addMessage(response, 'bot');
     document.getElementById('chat-input').value = '';
-}
 
 // Function to normalize text
 function normalize(text) {
