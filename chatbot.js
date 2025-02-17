@@ -144,7 +144,7 @@ function normalize(text) {
     }
     return text
         .toLowerCase()
-        .replace(/[^\w\s]|_/g, "")  // Remove punctuation
+        .replace(/[^\w\s/]|_/g, "")  // Remove punctuation
         .replace(/\s+/g, " ")       // Replace multiple spaces with a single space
         .trim();
 }
