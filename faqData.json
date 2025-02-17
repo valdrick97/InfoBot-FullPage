@@ -54,6 +54,10 @@
       "name": "Group Codes",
       "questions": [
         {
+          "question": "What Group Codes are there?", "Group Codes", 
+          "answer": "There are a handful of Group Codes currently active. Just type in the code and i'll pull up the information for you."
+        },
+        {
           "question": "cross25",
           "answer": "For the Inn, $79KD, $99QD. Owner is LaTanya Cross. Must reserve dates by 3/02/2025. Reservation dates are 3/16/2025 to 3/17/2025. Go to the Group Codes tab on the website to see all the active codes."
         },
@@ -342,10 +346,6 @@
         {
           "question": "What can you do?",
           "answer": "I can assist with any basic questions you have about CCR and Reservations. And don't worry—exciting new features are on the way soon!"
-        },
-        {
-          "question": "What Group Codes are there?",
-          "answer": "There are a handful of Group Codes currently active. Just type in the code and i'll pull up the information for you."
         },
         {
           "question": "Hello",
