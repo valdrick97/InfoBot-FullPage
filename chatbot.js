@@ -141,6 +141,7 @@ function sendMessage() {
     // If the answer is a string, use it as is
     response = faq ? faq.answer : "I couldn't find a matching answer. Can you rephrase your question?";
 }
+}
 
     addMessage(response, 'bot');
     document.getElementById('chat-input').value = '';
