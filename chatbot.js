@@ -261,23 +261,3 @@ function findBestMatch(userInput) {
   return "I couldn't find a matching answer. Can you rephrase your question?";
 }
 
-fetch('faqData.json')
-  .then(response => response.json())
-  .then(data => {
-    console.log("Loaded FAQ Data:", data); // Debug: Check if data is loaded correctly
-    faqData = data.categories.flatMap(category => category.questions);
-    fuzzySet = FuzzySet(faqData.map(qa => normalize(qa.question)));
-    faqData.forEach(qa => {
-      faqMap.set(normalize(qa.question), qa.answer);
-    });
-  })
-  .catch(error => console.error("Error loading FAQ data:", error));
-
-if (faq && typeof faq.answer === 'object') {
-  response = `${faq.question}:\n\n`;
-  for (const day in faq.answer) {
-    response += `${day}:\n${faq.answer[day]}\n\n`;
-  }
-  response = response.trim();
-  console.log("Formatted Response:", response); // Debug: Check formatted response
-}
