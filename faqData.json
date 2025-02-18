@@ -55,11 +55,15 @@
       "questions": [
         {
           "question": "What Group Codes are there?", 
-          "answer": "There are a handful of Group Codes currently active. Just type in the code and i'll pull up the information for you."
+          "answer": "There are a handful of Group Codes currently active. Just type in the code and i'll pull up the information for you. If you need a list of the codes just type Group List."
         },
         {
           "question": "Group Codes", 
-          "answer": "There are a handful of Group Codes currently active. Just type in the code and i'll pull up the information for you."
+          "answer": "There are a handful of Group Codes currently active. Just type in the code and i'll pull up the information for you. If you need a list of the codes just type Group List."
+        },
+        {
+          "question": "Group List",
+          "answer": "Here is a list of the current Group codes we have. CROSS25, WATTS25, LGAGOL2, COLBERT, POKER25, CRAIN25, GOLDEN1, POW25, BAYOU25, ROCK252, 4ACES25, MERE25, SNOWMEN, GULF025, LGAGOLF, AIRS025, AIRS252, T2MAN25, VVA2025, RRMG525, DHG2025, ROSS025, DWEBB25, ROGERS1, JMCG025."
         },
         {
           "question": "Group Reservations", 
