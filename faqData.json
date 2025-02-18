@@ -974,6 +974,36 @@
       ]
     },
     {
+      "name": "Buses to Coushatta",
+      "questions": [
+        {
+          "question": "Houston",
+          "answer": "1st Class Tours ---- (281)290-8800 and Countiential Tours ---- (713)334-8888"
+        },
+        {
+          "question": "Corpus Christi",
+          "answer": "RockPort Tours ---- (361)452-2012 and Luck Tours ---- (361)772-1345"
+        },
+        {
+          "question": "San Antonio",
+          "answer": "Serenity Tours ---- (866)766-0794 or (758)719-1775"
+        },
+        {
+          "question": " New Orleans",
+          "answer": "Hotard Bus ---- (800)356-6831"
+        }
+      ]
+    },
+    {
+      "name": "Local Hotels",
+      "questions": [
+        {
+          "question": "Local Hotels",
+          "answer": "Super 8 ---- (337)738-7979 and Great Wood Cabins ---- (337)738-4740 and Quality Inn ---- (337)738-3240"
+        }
+      ]
+    },
+    {
       "name": "LMS",
       "questions": [
         {
