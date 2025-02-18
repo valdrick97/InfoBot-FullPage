@@ -124,19 +124,19 @@ function sendMessage() {
     let faq = faqData.find(f => normalize(f.question) === bestMatch[0][1]);
 
     if (faq && typeof faq.answer === 'object') {
-      // If the answer is an object (break times for each day), format it
-      response = `${faq.question}:\n\n`;
-      for (const day in faq.answer) {
-        response += `${day}:\n${faq.answer[day]}\n\n`;
-      }
-      response = response.trim(); // Remove the last newline
-    } else {
-      // If the answer is a string, use it as is
-      response = faq ? faq.answer : "I couldn't find a matching answer. Can you rephrase your question?";
+    response = `${faq.question}:\n\n`;
+    for (const day in faq.answer) {
+        response += `${day}:\n`;
+        faq.answer[day].forEach(time => {
+            response += `${time}\n`;
+        });
+        response += `\n`; // Add an extra newline for separation
     }
-  } else {
-    response = "I couldn't find a matching answer. Can you rephrase your question?";
-  }
+    response = response.trim(); // Remove the last newline
+} else {
+    // If the answer is a string, use it as is
+    response = faq ? faq.answer : "I couldn't find a matching answer. Can you rephrase your question?";
+}
 
   addMessage(response, 'bot');
   document.getElementById('chat-input').value = '';
