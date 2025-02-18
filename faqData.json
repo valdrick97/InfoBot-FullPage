@@ -5,7 +5,7 @@
           "questions": [
             {
               "question": "What are the break times for Swing shift",
-              "variation": ["Break Times", "Swing Shift", "Swing Shift break times"],
+              "variations": ["Break Times", "Swing Shift", "Swing Shift break times"],
               "answer": "I know the current break times for all of the Associates on Swings. Just type in their first and last name and ill bring up their break times!"
             },
             {
