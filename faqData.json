@@ -1,31 +1,23 @@
 {
   "categories": [
         {
-          "name": "Standard Deals",
+          "name": "Swing Break Times",
           "questions": [
             {
-              "question": " Any promotions, discounts or promotions for any of the hotels?",
-              "answer": "Yes we have both our standard discounts and our Monthly Promotions. Which hotel are you looking for?"
+              "question": "What are the break times for Swing shift",
+              "answer": "I know the current break times for all of the Associates on Swings. Just type in their first and last name and ill bring up their break times!"
             },
             {
-              "question": "Grand Hotel (GH)",
-              "answer": "There are 3 options. GAARP, GMIL OR GNAAM. GAARP is a 10% discount for AARP Members. They must have their AARP ID at checkin. GMIL is a 25% discount for Active or Retired Military Only! Must have Mil ID at checkin. GNaam is a 25% discount for any Native American Tribe that isnt Coushatta Tribe of Louisiana. Must have their Id."
+              "question": "Break Times?",
+              "answer": "I know the break times for both Days and Swing shift. Which shift are you looking for?"
             },
             {
-              "question": " Seven Clans (SC)",
-              "answer": "There are 3 options. SCAARP, SMIL OR SCNAAM. SCAARP is a 10% discount for AARP Members. They must have their AARP ID at checkin. SMIL is a 25% discount for Active or Retired Military Only! Must have Mil ID at checkin. SCNaam is a 25% discount for any Native American Tribe that isnt Coushatta Tribe of Louisiana. Must have their Id."
+              "question": "Swing Shift",
+              "answer": "I know the current break times for all of the Associates on Swings. Just type in their first and last name and ill bring up their break times!"
             },
             {
-            "question": " The Inn (In)",
-            "answer": "There are 2 options. INNMIL is a 25% discount for Active or Retired Military Only! Must have Mil ID at checkin. INAAM is a 25% discount for any Native American Tribe that isnt Coushatta Tribe of Louisiana. Must have their Id."
-            },
-            {
-            "question": "Chalet",
-            "answer": " There are 2 options. RMIL is a 25% discount for Active or Retired Military Only! Must have Mil ID at checkin. RNAAM is a 25% discount for any Native American Tribe that isnt Coushatta Tribe of Louisiana. Must have their Id."
-            },
-            {
-            "question": "RV",
-            "answer": " There is 1 option. GOODRV must have their Good Sams Member ID at checkin"
+              "question": "Swing Shift break times",
+              "answer": "I know the current break times for all of the Associates on Swings. Just type in their first and last name and ill bring up their break times!"
         }
       ]
     },
@@ -57,10 +49,7 @@
           "question": "What Group Codes are there?", 
           "answer": "There are a handful of Group Codes currently active. Just type in the code and i'll pull up the information for you. If you need a list of the codes just type Group List."
         },
-        {
-          "question": "Group Codes", 
-          "answer": "There are a handful of Group Codes currently active. Just type in the code and i'll pull up the information for you. If you need a list of the codes just type Group List."
-        },
+       <strong>'Group List'</strong>
         {
           "question": "Group List",
           "answer": "Here is a list of the current Group codes we have. CROSS25, WATTS25, LGAGOL2, COLBERT, POKER25, CRAIN25, GOLDEN1, POW25, BAYOU25, ROCK252, 4ACES25, MERE25, SNOWMEN, GULF025, LGAGOLF, AIRS025, AIRS252, T2MAN25, VVA2025, RRMG525, DHG2025, ROSS025, DWEBB25, ROGERS1, JMCG025."
@@ -172,6 +161,35 @@
         {
           "question": "JMCG025",
           "answer": "For the SC. $209KD, $239QD. Owner is  Mickey Johnson Miller Cameron Classic. Must reserve dates by 5/8/2025. Reservation dates are 6/7/2025 to 6/8/2025. Go to the Group Codes tab on the website to see all the active codes."
+        }
+      ]
+    },
+    {
+          "name": "Standard Deals",
+          "questions": [
+            {
+              "question": " Any promotions, discounts or promotions for any of the hotels?",
+              "answer": "Yes we have both our standard discounts and our Monthly Promotions. Which hotel are you looking for?"
+            },
+            {
+              "question": "Grand Hotel (GH)",
+              "answer": "There are 3 options. GAARP, GMIL OR GNAAM. GAARP is a 10% discount for AARP Members. They must have their AARP ID at checkin. GMIL is a 25% discount for Active or Retired Military Only! Must have Mil ID at checkin. GNaam is a 25% discount for any Native American Tribe that isnt Coushatta Tribe of Louisiana. Must have their Id."
+            },
+            {
+              "question": " Seven Clans (SC)",
+              "answer": "There are 3 options. SCAARP, SMIL OR SCNAAM. SCAARP is a 10% discount for AARP Members. They must have their AARP ID at checkin. SMIL is a 25% discount for Active or Retired Military Only! Must have Mil ID at checkin. SCNaam is a 25% discount for any Native American Tribe that isnt Coushatta Tribe of Louisiana. Must have their Id."
+            },
+            {
+            "question": " The Inn (In)",
+            "answer": "There are 2 options. INNMIL is a 25% discount for Active or Retired Military Only! Must have Mil ID at checkin. INAAM is a 25% discount for any Native American Tribe that isnt Coushatta Tribe of Louisiana. Must have their Id."
+            },
+            {
+            "question": "Chalet",
+            "answer": " There are 2 options. RMIL is a 25% discount for Active or Retired Military Only! Must have Mil ID at checkin. RNAAM is a 25% discount for any Native American Tribe that isnt Coushatta Tribe of Louisiana. Must have their Id."
+            },
+            {
+            "question": "RV",
+            "answer": " There is 1 option. GOODRV must have their Good Sams Member ID at checkin"
         }
       ]
     },
