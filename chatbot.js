@@ -95,6 +95,37 @@ function resetInactivityTimer() {
     }, 10 * 60 * 1000); // 10 minutes
 }
 
+// Function to find the best match
+function findBestMatch(userInput) {
+    const normalizedInput = normalize(userInput);
+
+    // Try an exact match first
+    if (faqMap.has(normalizedInput)) {
+        const result = faqMap.get(normalizedInput);
+        // Check if the result is an object with an 'answer' property
+        return typeof result === 'object' && result.answer ? result.answer : result;
+    }
+
+    // Check variations
+    for (const [question, data] of faqMap.entries()) {
+        if (data.variations && data.variations.includes(normalizedInput)) {
+            return data.answer;
+        }
+    }
+
+    // Fall back to fuzzy matching
+    const fuzzyMatches = fuzzySet.get(normalizedInput);
+    if (fuzzyMatches && fuzzyMatches.length > 0 && fuzzyMatches[0][0] > 0.7) {
+        const bestMatch = fuzzyMatches[0][1]; // Get the best match
+        const result = faqMap.get(bestMatch);
+        // Check if the result is an object with an 'answer' property
+        return typeof result === 'object' && result.answer ? result.answer : result;
+    }
+
+    return "I couldn't find a matching answer. Can you rephrase your question?";
+}
+
+
 // Handle user input and bot response
 function sendMessage() {
     const userInput = document.getElementById('chat-input').value.trim();
@@ -117,36 +148,14 @@ function sendMessage() {
     addMessage(userInput, 'user');
 
     // Find the best match using fuzzy matching
-    let bestMatch = fuzzySet.get(userInput);
-    let response = "I'm sorry, I don't understand that question.";
-
-    if (bestMatch && bestMatch.length > 0 && bestMatch[0][0] > 0.7) {
-        let faq = faqData.find(f => normalize(f.question) === bestMatch[0][1]);
-
-        if (faq && typeof faq.answer === 'object') {
-    response = `${faq.question}:\n\n`;
-    for (const day in faq.answer) {
-        response += `${day}:\n`;
-        if (Array.isArray(faq.answer[day])) {
-            faq.answer[day].forEach(time => {
-                response += `${time}\n`;
-            });
-        } else {
-            response += `${faq.answer[day]}\n`;
-        }
-        response += `\n`; // Add an extra newline for separation
-    }
-    response = response.trim(); // Remove the last newline
-} else {
-    // If the answer is a string, use it as is
-    response = faq ? faq.answer : "I couldn't find a matching answer. Can you rephrase your question?";
-}
-}
-
+    const response = findBestMatch(userInput);
     addMessage(response, 'bot');
+
+    // Clear the input box
     document.getElementById('chat-input').value = '';
 }
 
+// Normalize input text
 function normalize(text) {
     if (typeof text !== 'string') {
         return '';
@@ -232,61 +241,44 @@ fetch('faqData.json')
     .then(response => response.json())
     .then(data => {
         faqData = data.categories.flatMap(category => category.questions);
-        fuzzySet = FuzzySet(faqData.map(qa => normalize(qa.question)));
         faqData.forEach(qa => {
+            // Add the main question to faqMap
             faqMap.set(normalize(qa.question), qa.answer);
+
+            // Add variations to faqMap
+            if (qa.variations) {
+                qa.variations.forEach(variation => {
+                    faqMap.set(normalize(variation), qa.answer); // Store only the answer
+                });
+            }
+
+            // Add to fuzzySet
+            fuzzySet.add(normalize(qa.question));
+            if (qa.variations) {
+                qa.variations.forEach(variation => fuzzySet.add(normalize(variation)));
+            }
         });
 
-        // Preprocess data
-        data.categories.forEach(category => {
-            category.questions.forEach(qa => {
-                const normalizedQuestion = normalize(qa.question);
-                faqMap.set(normalizedQuestion, qa.answer);
-                fuzzySet.add(normalizedQuestion); // Add to fuzzy set
-            });
-        });
-    });
+        console.log('FAQ data loaded and preprocessed successfully!');
+    })
+    .catch(error => console.error('Error loading FAQ data:', error));
 
-// Function to find the best match
-function findBestMatch(userInput) {
-    const normalizedInput = normalize(userInput);
-
-    // Try an exact match first
-    if (faqMap.has(normalizedInput)) {
-        return faqMap.get(normalizedInput);
-    }
-
-     for (const variation of item.variations) {
-      if (variation.toLowerCase() === userInput) {
-        return item.answer;
-      }
-    }
-
-    // Fall back to fuzzy matching
-    const fuzzyMatches = fuzzySet.get(normalizedInput);
-    if (fuzzyMatches && fuzzyMatches.length > 0 && fuzzyMatches[0][0] > 0.7) {
-        const bestMatch = fuzzyMatches[0][1]; // Get the best match
-        return faqMap.get(bestMatch);
-    }
-
-    return "I couldn't find a matching answer. Can you rephrase your question?";
-}
-
+// Function to search by name
 function searchByName(input) {
-  const normalizedInput = input.toLowerCase().trim();  // Normalize input for comparison
-  
-  // Loop through faqData directly
-  for (let person of faqData) {
-    const normalizedName = person.question.toLowerCase();  // Normalize name for case-insensitive comparison
-    
-    // Split the name into first and last parts, e.g., "Arevalo, Archie"
-    const [lastName, firstName] = normalizedName.split(",").map(part => part.trim());
+    const normalizedInput = input.toLowerCase().trim();  // Normalize input for comparison
 
-    // Check if input matches first or last name (partial matches allowed)
-    if (firstName.includes(normalizedInput) || lastName.includes(normalizedInput)) {
-      return person.answer;  // Return the associated answer if a match is found
+    // Loop through faqData directly
+    for (let person of faqData) {
+        const normalizedName = person.question.toLowerCase();  // Normalize name for case-insensitive comparison
+
+        // Split the name into first and last parts, e.g., "Arevalo, Archie"
+        const [lastName, firstName] = normalizedName.split(",").map(part => part.trim());
+
+        // Check if input matches first or last name (partial matches allowed)
+        if (firstName.includes(normalizedInput) || lastName.includes(normalizedInput)) {
+            return person.answer;  // Return the associated answer if a match is found
+        }
     }
-  }
 
-  return "No match found.";  // If no match is found
+    return "No match found.";  // If no match is found
 }
