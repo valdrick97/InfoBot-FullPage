@@ -256,6 +256,12 @@ function findBestMatch(userInput) {
         return faqMap.get(normalizedInput);
     }
 
+     for (const variation of item.variations) {
+      if (variation.toLowerCase() === userInput) {
+        return item.answer;
+      }
+    }
+
     // Fall back to fuzzy matching
     const fuzzyMatches = fuzzySet.get(normalizedInput);
     if (fuzzyMatches && fuzzyMatches.length > 0 && fuzzyMatches[0][0] > 0.7) {
