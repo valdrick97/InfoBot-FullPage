@@ -18,6 +18,24 @@
             {
               "question": "Swing Shift break times",
               "answer": "I know the current break times for all of the Associates on Swings. Just type in their first and last name and ill bring up their break times!"
+            },
+            {
+          "question": "Michelle O'Conner",
+          "answer": {
+            "Monday": "4:00-4:15\n6:00-6:30\n8:45-9:00",
+            "Tuesday": "4:00-4:15\n6:00-6:30\n8:45-9:00",
+            "Wednesday": "4:00-4:15\n6:00-6:30\n8:45-9:00",
+            "Thursday": "4:00-4:15\n6:00-6:30\n8:45-9:00",
+            "Friday": "4:00-4:15\n6:00-6:30\n8:45-9:00"
+        },
+        {
+          "question": "Stephanie Kingrey",
+          "answer": {
+            "Monday": "4:15-4:30\n6:15-6:45\n9:00-9:15",
+            "Tuesday": "4:15-4:30\n6:15-6:45\n9:00-9:15",
+            "Wednesday": "4:15-4:30\n6:15-6:45\n9:00-9:15",
+            "Thursday": "4:15-4:30\n6:15-6:45\n9:00-9:15",
+            "Friday": "4:15-4:30\n6:15-6:45\n9:00-9:15"
         }
       ]
     },
