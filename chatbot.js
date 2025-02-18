@@ -265,3 +265,22 @@ function findBestMatch(userInput) {
 
     return "I couldn't find a matching answer. Can you rephrase your question?";
 }
+
+function searchByName(input) {
+  const normalizedInput = input.toLowerCase().trim();  // Normalize input for comparison
+  
+  // Loop through faqData directly
+  for (let person of faqData) {
+    const normalizedName = person.question.toLowerCase();  // Normalize name for case-insensitive comparison
+    
+    // Split the name into first and last parts, e.g., "Arevalo, Archie"
+    const [lastName, firstName] = normalizedName.split(",").map(part => part.trim());
+
+    // Check if input matches first or last name (partial matches allowed)
+    if (firstName.includes(normalizedInput) || lastName.includes(normalizedInput)) {
+      return person.answer;  // Return the associated answer if a match is found
+    }
+  }
+
+  return "No match found.";  // If no match is found
+}
