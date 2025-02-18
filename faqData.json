@@ -5,18 +5,7 @@
           "questions": [
             {
               "question": "What are the break times for Swing shift",
-              "answer": "I know the current break times for all of the Associates on Swings. Just type in their first and last name and ill bring up their break times!"
-            },
-            {
-              "question": "Break Times?",
-              "answer": "I know the break times for both Days and Swing shift. Which shift are you looking for?"
-            },
-            {
-              "question": "Swing Shift",
-              "answer": "I know the current break times for all of the Associates on Swings. Just type in their first and last name and ill bring up their break times!"
-            },
-            {
-              "question": "Swing Shift break times",
+              "variatinos": "["Break Times", "Swing Shift", Swing Shift break times"],
               "answer": "I know the current break times for all of the Associates on Swings. Just type in their first and last name and ill bring up their break times!"
             },
             {
