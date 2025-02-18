@@ -213,8 +213,12 @@
       ]
     },
     {
-        "name": "Standard Deals",
+        "name": "Associate extensions",
         "questions": [
+          {
+            "question": "Can i look up someones extensions?",
+            "answer": "Yes you can! Just type in their name and i should be able to find them."
+          },
           {
             "question": "Abshire, Sarah", 
             "answer": "Database Coordinator 1230"
