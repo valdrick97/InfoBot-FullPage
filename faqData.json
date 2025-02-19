@@ -180,15 +180,18 @@
               "answer": "Yes we have both our standard discounts and our Monthly Promotions. Which hotel are you looking for?"
             },
             {
-              "question": "Grand Hotel (GH)",
+              "question": "Grand Hotel",
+              "variations": ["GH", "GrandHotel"],
               "answer": "There are 3 options. GAARP, GMIL OR GNAAM. GAARP is a 10% discount for AARP Members. They must have their AARP ID at checkin. GMIL is a 25% discount for Active or Retired Military Only! Must have Mil ID at checkin. GNaam is a 25% discount for any Native American Tribe that isnt Coushatta Tribe of Louisiana. Must have their Id."
             },
             {
-              "question": " Seven Clans (SC)",
+              "question": " Seven Clans",
+              "variations": ["SC", "SevenClans"],
               "answer": "There are 3 options. SCAARP, SMIL OR SCNAAM. SCAARP is a 10% discount for AARP Members. They must have their AARP ID at checkin. SMIL is a 25% discount for Active or Retired Military Only! Must have Mil ID at checkin. SCNaam is a 25% discount for any Native American Tribe that isnt Coushatta Tribe of Louisiana. Must have their Id."
             },
             {
-            "question": " The Inn (In)",
+            "question": " The Inn",
+              "variations": ["Inn", "Inn of coushatta", "Old bestwestern", "In of Coushatta", "The In", "The old bestwestern"],
             "answer": "There are 2 options. INNMIL is a 25% discount for Active or Retired Military Only! Must have Mil ID at checkin. INAAM is a 25% discount for any Native American Tribe that isnt Coushatta Tribe of Louisiana. Must have their Id."
             },
             {
@@ -213,7 +216,13 @@
   "questions": [
     {
       "question": "Can i look up someones extensions?",
+      "variations": ["associates extensions", "Can i find someones extension", "Extension numbers", "How can i find an extension for someon"],
       "answer": "Yes you can! Just type in their name and i should be able to find them."
+    },
+    {
+      "question": "When was the extensions last updated",
+      "variations": ["Extensions list last updated", "How old is the extension list", "Extensions last updated"],
+      "answer": "The extension list is updated as soon as I get the updated list. My knowledge is limited to manuel updates."
     },
     {
       "question": "Abshire, Sarah",
