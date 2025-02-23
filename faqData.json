@@ -1381,6 +1381,11 @@
       "name": "General",
       "questions": [
         {
+          "question": "How can i input confirmation numbers",
+          "answer": "To input a confirmation number that you have, you need to type your badge number space confirmation number. Like this 12345 HDS45.",
+          "variations": ["confirmation number", "can i type confirmation numbers", How to type my confirmation numbers in", "what order do i put my confirmation numbers in"]
+        },
+        {
           "question": "What codes are there?", 
           "answer": "We have serveral codes active currently. To help you better type in either Group Codes, Standard Codes or Monthly Deals."
         },
