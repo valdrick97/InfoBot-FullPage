@@ -125,9 +125,41 @@ function findBestMatch(userInput) {
     return "I couldn't find a matching answer. Can you rephrase your question?";
 }
 
+// Function to submit data to Google Form
+async function submitToGoogleForm(employeeId, confirmationNumber) {
+    const FORM_URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSds2HGBadOLjPgsTR4w_8lmz-rrTmVTLQFeaQx_V1e7Sln5gA/formResponse";
+    const EMPLOYEE_ID_ENTRY = "entry.792089064"; // Replace with actual entry ID for Employee ID
+    const CONFIRMATION_NUMBER_ENTRY = "entry.683466226"; // Replace with actual entry ID for Confirmation Number
+
+    const formData = new URLSearchParams();
+    formData.append(EMPLOYEE_ID_ENTRY, employeeId);
+    formData.append(CONFIRMATION_NUMBER_ENTRY, confirmationNumber);
+
+    try {
+        const response = await fetch(FORM_URL, {
+            method: "POST",
+            body: formData,
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            mode: "no-cors", // Required for Google Forms
+        });
+
+        if (response.ok || response.status === 0) {
+            // Google Forms always returns a 200 status, even if the submission fails
+            return true;
+        } else {
+            console.error("Failed to submit data to Google Form.");
+            return false;
+        }
+    } catch (error) {
+        console.error("Error submitting data to Google Form:", error);
+        return false;
+    }
+}
 
 // Handle user input and bot response
-function sendMessage() {
+async function sendMessage() {
     const userInput = document.getElementById('chat-input').value.trim();
 
     // Prevent sending an empty message
@@ -147,9 +179,27 @@ function sendMessage() {
 
     addMessage(userInput, 'user');
 
-    // Find the best match using fuzzy matching
-    const response = findBestMatch(userInput);
-    addMessage(response, 'bot');
+    // Check if the input matches the pattern for employee ID and confirmation number
+    const pattern = /(\d{5}) ([A-Za-z0-9]{5})/; // Regex for 5-digit ID and 5-character confirmation number
+    const match = userInput.match(pattern);
+
+    if (match) {
+        const employeeId = match[1];
+        const confirmationNumber = match[2];
+
+        // Submit data to Google Form
+        const success = await submitToGoogleForm(employeeId, confirmationNumber);
+
+        if (success) {
+            addMessage(`Submitted: Employee ID = ${employeeId}, Confirmation Number = ${confirmationNumber}`, 'bot');
+        } else {
+            addMessage("Failed to submit data. Please try again.", 'bot');
+        }
+    } else {
+        // Handle normal FAQ responses
+        const response = findBestMatch(userInput);
+        addMessage(response, 'bot');
+    }
 
     // Clear the input box
     document.getElementById('chat-input').value = '';
